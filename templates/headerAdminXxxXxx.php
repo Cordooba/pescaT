@@ -21,9 +21,9 @@
 
               <ul class="nav navbar-nav navbar-center">
 
-                <li><a href="../admin/ussers" title="Usuarios"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="../../../admin/ussers" title="Usuarios"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a></li>
 
-                <li><a href="../admin/publishing" title="Publicaciones"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></a></li>
+                  <li><a href="../../../admin/publishing" title="Publicaciones"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></a></li>
 
               </ul>
 

@@ -8,37 +8,55 @@
 
   <div class="col-lg-8 col-md-offset-2">
 
-    <table class="table table-hover">
+    <div class="panel panel-default">
 
-      <thead>
+        <div class="panel-body">
 
-        <tr class="info">
+          <table class="table table-hover">
 
-          <th>
+            <thead>
 
-            Panel de Administración
+              <tr class="info">
 
-          </th>
-          
-        </tr>
+                <th>
 
-      </thead>
+                  Panel de Administración
 
-      <tbody>
+                </th>
 
-        <tr>
+              </tr>
 
-          <td>
+            </thead>
 
-            <a href="ussers"><i class="fa fa-users" aria-hidden="true"></i>   Administración de Usuarios</a>
+            <tbody>
 
-          </td>
+              <tr>
 
-        </tr>
+                <td>
 
-      </tbody>
+                  <a href="ussers"><i class="fa fa-users" aria-hidden="true"></i>   Administración de Usuarios</a>
 
-    </table>
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+
+                  <a href="publishing"><i class="fa fa-comments-o" aria-hidden="true"></i>   Administración de Publicaciones</a>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        </div>
 
   </div>
 

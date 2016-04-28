@@ -1,8 +1,8 @@
 <?php
 
-  require_once '../../db/connectdb.php';
+  require_once '../../../db/connectdb.php';
 
-  if ( isset($_GET['deletePublishing']) ) {
+  if ( isset($_GET['updatePublishing']) ) {
 
     $id = htmlspecialchars($_POST['idPublishing'], ENT_QUOTES, 'UTF-8');
 
@@ -10,10 +10,10 @@
 
       try {
 
-        $sql = "UPDATE publishing SET deleted_at = NOW() WHERE id = :idPublishing";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(':idPublishing', $id);
-        $ps->execute();
+        $sql = "UPDATE publishing SET deleted_at = NULL WHERE id = :idPublishing";
+			  $ps = $pdo->prepare($sql);
+			  $ps->bindValue(':idPublishing', $id);
+			  $ps->execute();
 
       } catch (PDOException $e) {
 
@@ -22,7 +22,7 @@
       }
 
         header('Location: .');
-        exit();
+	      exit();
 
     }
 
@@ -30,7 +30,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL';
+    $sql = 'SELECT * FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NOT NULL && ussers.deleted_at IS NULL';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 
@@ -42,7 +42,7 @@
 
   while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
 
-    $arrayPublishingUsser[] = $row;
+    $arrayPublishingUsserDeleted[] = $row;
 
   }
 
