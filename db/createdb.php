@@ -59,6 +59,7 @@ try{
 	$sql = "CREATE TABLE publishing (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
 		idUsser			  	 				INT,
+		title										VARCHAR(50),
 		content 								LONGTEXT,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,

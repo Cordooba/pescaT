@@ -1,8 +1,8 @@
 <?php
 
-  require_once '../../db/connectdb.php';
+  require_once '../../../db/connectdb.php';
 
-  if ( isset($_GET['deleteUsser']) ) {
+  if ( isset($_GET['updateUsser']) ) {
 
     $id = htmlspecialchars($_POST['idUsser'], ENT_QUOTES, 'UTF-8');
 
@@ -10,7 +10,7 @@
 
       try {
 
-        $sql = "UPDATE ussers SET deleted_at = NOW() WHERE id = :idUsser";
+        $sql = "UPDATE ussers SET deleted_at = NULL WHERE id = :idUsser";
 			  $ps = $pdo->prepare($sql);
 			  $ps->bindValue(':idUsser', $id);
 			  $ps->execute();
@@ -30,7 +30,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM ussers WHERE deleted_at IS NULL';
+    $sql = 'SELECT * FROM ussers WHERE deleted_at IS NOT NULL';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 
@@ -42,7 +42,7 @@
 
   while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
 
-    $ussers[] = $row;
+    $ussersDeleted[] = $row;
 
   }
 
