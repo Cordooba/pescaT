@@ -36,7 +36,7 @@
       }
 
       if ( $pass != $repass ) {
-          $errores['incorrectPass'] = true;
+          $errores['incorrectPass'] = 'Las contraseñas no coinciden.';
       }
 
       if ( $bday == "" ) {
@@ -90,7 +90,7 @@
 
       try {
 
-        $sql = 'SELECT email, pass FROM ussers WHERE email=:email AND pass=:pass';
+        $sql = 'SELECT id, email, pass FROM ussers WHERE email=:email AND pass=:pass';
 
         $ps = $pdo->prepare($sql);
 
@@ -105,7 +105,7 @@
       }
 
       $usser = $ps->fetch(PDO::FETCH_ASSOC);
-      $stringSearch = 'admin';
+      $stringSearch = '@admin.com';
 
       if ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) ) {
 
@@ -113,6 +113,18 @@
     		exit();
 
       }elseif ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) == false ) {
+
+    		$sql = "INSERT INTO logins (idUsser, httpUserAgent, serverSoftware, serverProtocol, httpAcceptLanguage, remoteAddr) VALUES (:idUsser, :httpUserAgent, :serverSoftware, :serverProtocol, :httpAcceptLanguage, :remoteAddr)";
+
+    		$ps = $pdo->prepare($sql);
+
+    		$ps->bindValue(':idUsser', $usser['id']);
+  			$ps->bindValue(':httpUserAgent', $_SERVER['HTTP_USER_AGENT']);
+        $ps->bindValue(':serverSoftware', $_SERVER['SERVER_SOFTWARE']);
+        $ps->bindValue(':serverProtocol', $_SERVER['SERVER_PROTOCOL']);
+        $ps->bindValue(':httpAcceptLanguage', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        $ps->bindValue(':remoteAddr', $_SERVER['REMOTE_ADDR']);
+  			$ps->execute();
 
         header("Location: home");
     		exit();
