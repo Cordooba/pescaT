@@ -11,11 +11,11 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Favoritos</div>
+        <div class="panel-heading text-center">Listado de Comentarios</div>
 
           <div class="panel-body">
 
-            <?php if (!empty($favorites)) : ?>
+            <?php if (!empty($comments)) : ?>
 
             <table class="table table-striped">
 
@@ -26,7 +26,7 @@
                       Id
                     </th>
                     <th class="text-center">
-                      Nombre
+                      Usuario
                     </th>
                     <th class="text-center">
                       Email
@@ -46,16 +46,16 @@
 
       					<tbody>
 
-                    <?php foreach ( $favorites as $favorite ) : ?>
+                    <?php foreach ( $comments as $comment ) : ?>
                       <tr class="text-center">
-                        <td><?=$favorite['id']?></td>
-                        <td><?=$favorite['name']?></td>
-                        <td><?=$favorite['email']?></td>
-                        <td><?=$favorite['title']?></td>
-                        <td><?=$favorite['fecha']?></td>
+                        <td><?=$comment['id']?></td>
+                        <td><?=$comment['name']?></td>
+                        <td><?=$comment['email']?></td>
+                        <td><?=$comment['title']?></td>
+                        <td><?=$comment['fecha']?></td>
                         <td>
-                          <form class="" action="?deleteFavorite" method="POST">
-                            <input type="hidden" name="idFavorite" value="<?=$favorite['id']?>">
+                          <form class="" action="?deleteComment" method="POST">
+                            <input type="hidden" name="idComment" value="<?=$comment['id']?>">
                             <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                           </form>
                         </td>
@@ -68,7 +68,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen favoritos...</h1>
+              <h1 class="text-center">No existen comentarios...</h1>
 
             <?php endif ; ?>
 

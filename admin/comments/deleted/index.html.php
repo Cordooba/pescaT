@@ -10,11 +10,11 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Listado de Favoritos</div>
+      <div class="panel-heading text-center">Listado de Comentarios</div>
 
         <div class="panel-body">
 
-          <?php if (!empty($favoritesDeleted)) : ?>
+          <?php if (!empty($commentsDeleted)) : ?>
 
           <table class="table table-striped">
 
@@ -45,16 +45,16 @@
 
               <tbody>
 
-                  <?php foreach ( $favoritesDeleted as $favoriteDeleted ) : ?>
+                  <?php foreach ( $commentsDeleted as $commentDeleted ) : ?>
                     <tr class="text-center">
-                      <td><?=$favoriteDeleted['id']?></td>
-                      <td><?=$favoriteDeleted['name']?></td>
-                      <td><?=$favoriteDeleted['email']?></td>
-                      <td><?=$favoriteDeleted['title']?></td>
-                      <td><?=$favoriteDeleted['fecha']?></td>
+                      <td><?=$commentDeleted['id']?></td>
+                      <td><?=$commentDeleted['name']?></td>
+                      <td><?=$commentDeleted['email']?></td>
+                      <td><?=$commentDeleted['title']?></td>
+                      <td><?=$commentDeleted['fecha']?></td>
                       <td>
-                        <form class="" action="?updateFavorite" method="POST">
-                          <input type="hidden" name="idFavorite" value="<?=$favoriteDeleted['id']?>">
+                        <form class="" action="?updateComment" method="POST">
+                          <input type="hidden" name="idComment" value="<?=$commentDeleted['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
                         </form>
                       </td>
@@ -67,7 +67,7 @@
 
           <?php else : ?>
 
-            <h1 class="text-center">No existen favoritos eliminados...</h1>
+            <h1 class="text-center">No existen comentarios eliminados...</h1>
 
           <?php endif ; ?>
 

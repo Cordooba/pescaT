@@ -32,7 +32,7 @@
                   <label class="col-md-3 control-label">Contenido</label>
 
                   <div class="col-md-6">
-                      <input type="text" class="form-control" name="content" value="<?php if(isset($content)) echo $content;?>" >
+                      <textarea class="form-control" name="content" rows="8" cols="40"><?php if(isset($content)) echo $content;?></textarea>
 
                       <?php if ( isset($errores['content']) ) : ?>
                         <p class="text-danger"><?=$errores['content']?></p>
