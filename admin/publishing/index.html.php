@@ -37,6 +37,9 @@
                       Fecha de Creación
                     </th>
                     <th class="text-center">
+                      Visualizar
+                    </th>
+                    <th class="text-center">
                       Eliminar
                     </th>
                   </tr>
@@ -47,11 +50,14 @@
 
                     <?php foreach ( $arrayPublishingUsser as $publishing ) : ?>
                       <tr class="text-center">
-                        <td><?=$publishing['id']?></td>
+                        <td><?=$publishing['idPublishing']?></td>
                         <td><?=$publishing['name']?></td>
                         <td><?=$publishing['email']?></td>
-                        <td><?=$publishing['idUsser']?></td>
+                        <td><?=$publishing['idUsuario']?></td>
                         <td><?=$publishing['fecha']?></td>
+                        <td>
+                          <a href="view?id=<?=$publishing['idPublishing']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
+                        </td>
                         <td>
                           <form class="" action="?deletePublishing" method="POST">
                             <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
