@@ -4,7 +4,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL';
+    $sql = 'SELECT *, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

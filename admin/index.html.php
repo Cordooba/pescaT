@@ -18,7 +18,7 @@
 
               <tr class="info">
 
-                <th>
+                <th class="text-center">
 
                   Panel de Administración
 
@@ -32,7 +32,7 @@
 
               <tr>
 
-                <td>
+                <td class="text-center">
 
                   <a href="ussers"><i class="fa fa-users" aria-hidden="true"></i>   Administración de Usuarios</a>
 
@@ -42,7 +42,7 @@
 
               <tr>
 
-                <td>
+                <td class="text-center">
 
                   <a href="publishing"><i class="fa fa-comments-o" aria-hidden="true"></i>   Administración de Publicaciones</a>
 

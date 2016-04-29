@@ -10,7 +10,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading">Listado de Usuarios Eliminados</div>
+      <div class="panel-heading text-center">Listado de Usuarios Eliminados</div>
 
         <div class="panel-body">
 
@@ -21,25 +21,25 @@
               <thead>
 
                 <tr>
-                  <th>
+                  <th class="text-center">
                     Id
                   </th>
-                  <th>
+                  <th class="text-center">
                     Nombre
                   </th>
-                  <th>
+                  <th class="text-center">
                     Apellidos
                   </th>
-                  <th>
+                  <th class="text-center">
                     Email
                   </th>
-                  <th>
+                  <th class="text-center">
                     Password
                   </th>
-                  <th>
+                  <th class="text-center">
                     Fecha de Eliminación
                   </th>
-                  <th>
+                  <th class="text-center">
                     Actualizar
                   </th>
                 </tr>
@@ -49,7 +49,7 @@
               <tbody>
 
                   <?php foreach ( $ussersDeleted as $usser ) : ?>
-                    <tr>
+                    <tr class="text-center">
                       <td><?=$usser['id']?></td>
                       <td><?=$usser['name']?></td>
                       <td><?=$usser['subname']?></td>
@@ -69,7 +69,7 @@
 
           <?php else : ?>
 
-            <h1>No existen usuarios eliminados...</h1>
+            <h1 class="text-center">No existen usuarios eliminados...</h1>
 
           <?php endif ; ?>
 

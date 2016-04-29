@@ -26,7 +26,7 @@
                           <div class="form-inline">
 
                             <div class="form-group">
-                                <label class="col-md-6 control-label">Correo electrónico</label>
+                                <label class="col-md-6 control-label text-center">Correo electrónico</label>
 
                                     <div class="col-md-6">
                                       <input type="email" class="form-control" name="emailLogin">

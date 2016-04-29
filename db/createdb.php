@@ -50,7 +50,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'logins' : ". $e->getMessage());
 
 }
 
@@ -74,7 +74,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'publishing' : ". $e->getMessage());
 
 }
 
@@ -97,7 +97,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'usserFriends' : ". $e->getMessage());
 
 }
 
@@ -122,7 +122,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'favorites' : ". $e->getMessage());
 
 }
 
@@ -151,7 +151,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'comments' : ". $e->getMessage());
 
 }
 
@@ -171,7 +171,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'locationMaps' : ". $e->getMessage());
 
 }
 
@@ -191,7 +191,7 @@ try{
 
 }catch(PDOException $e){
 
-		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+		die("No se ha podido crear la tabla 'fishMaps' : ". $e->getMessage());
 
 }
 

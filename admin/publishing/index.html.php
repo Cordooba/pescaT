@@ -10,7 +10,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading">Listado de Publicaciones</div>
+        <div class="panel-heading text-center">Listado de Publicaciones</div>
 
           <div class="panel-body">
 
@@ -21,25 +21,25 @@
                 <thead>
 
                   <tr>
-                    <th>
+                    <th class="text-center">
                       Id
                     </th>
-                    <th>
+                    <th class="text-center">
                       Contenido
                     </th>
-                    <th>
+                    <th class="text-center">
                       Apellidos
                     </th>
-                    <th>
+                    <th class="text-center">
                       Email
                     </th>
-                    <th>
+                    <th class="text-center">
                       Id Usuario
                     </th>
-                    <th>
+                    <th class="text-center">
                       Fecha de Creación
                     </th>
-                    <th>
+                    <th class="text-center">
                       Eliminar
                     </th>
                   </tr>
@@ -49,7 +49,7 @@
       					<tbody>
 
                     <?php foreach ( $arrayPublishingUsser as $publishing ) : ?>
-                      <tr>
+                      <tr class="text-center">
                         <td><?=$publishing['id']?></td>
                         <td><?=$publishing['content']?></td>
                         <td><?=$publishing['name']?></td>
@@ -71,9 +71,11 @@
 
             <?php else : ?>
 
-              <h1>No existen publicaciones...</h1>
+              <h1 class="text-center">No existen publicaciones...</h1>
 
             <?php endif ; ?>
+
+              <a class="btn btn-primary" href="new" role="button">Nueva</a>
 
               <a class="btn btn-primary" href="deleted" role="button">Eliminadas</a>
 

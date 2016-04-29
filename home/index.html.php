@@ -6,11 +6,11 @@
 
 <div class="container">
 
-  <div class="col-lg-12">
+  <div class="col-lg-8 col-md-offset-2">
 
     <div class="panel panel-default">
 
-      <div class="panel-heading">De actualidad...</div>
+      <div class="panel-heading text-center">De actualidad...</div>
 
         <div class="panel-body">
 
@@ -22,24 +22,28 @@
 
                   <?php foreach ( $arrayPublishingUsser as $publishing ) : ?>
                     <tr>
-                      <td><?=$publishing['id']?></td>
-                      <td><?=$publishing['content']?></td>
-                      <td><?=$publishing['name']?></td>
-                      <td><?=$publishing['email']?></td>
-                      <td><?=$publishing['idUsser']?></td>
-                      <td><?=$publishing['created_at']?></td>
-                      <td>
-                        <form class="" action="" method="POST">
+
+                      <td class="text-center">
+
+                        <?=$publishing['content']?>
+                        <br />
+                        <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
+                        <br />
+                        <strong>Fecha :</strong> <?=$publishing['fecha']?>
+                        <br />
+                        Comentar
+                        <form class="" action="" method="POST" style="display: inline">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></button>
                         </form>
-                      </td>
-                      <td>
-                        <form class="" action="" method="POST">
+                        Lo pesco
+                        <form class="" action="" method="POST" style="display: inline">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button>
                         </form>
+
                       </td>
+
                     </tr>
                   <?php endforeach ; ?>
 
