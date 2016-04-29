@@ -50,6 +50,26 @@
 
               </tr>
 
+              <tr>
+
+                <td class="text-center">
+
+                  <a href="comments"><i class="fa fa-comment" aria-hidden="true"></i>   Administración de Comentarios</a>
+
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td class="text-center">
+
+                  <a href="favorites"><i class="fa fa-plus-square" aria-hidden="true"></i>   Administración de Favoritos</a>
+
+                </td>
+
+              </tr>
+
             </tbody>
 
           </table>

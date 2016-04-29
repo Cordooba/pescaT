@@ -4,9 +4,44 @@
 
   if ( isset($_GET['addPublishing']) ) {
 
-    $title =
-    $content =
-    $idUsser =
+    $title = htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8');
+    $content = htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8');
+    $idUsser = htmlspecialchars($_POST['idUsser'], ENT_QUOTES, 'UTF-8');
+
+    $errores = [];
+
+    if ( $title == "" ) {
+        $errores['title'] = 'Debes introducir un título para la identificación.';
+    }
+
+    if ( $content == "" ) {
+        $errores['content'] = 'Debes introducir contenido para la publicación.';
+    }
+
+    if ( empty($errores) ) {
+
+      try {
+
+        $sql = "INSERT INTO publishing (idUsser, content) VALUES (:idUsser, :content)";
+
+        $ps = $pdo->prepare($sql);
+
+        $ps->bindValue(':title', $title);
+        $ps->bindValue(':idUsser', $idUsser);
+        $ps->bindValue(':content', $content);
+
+        $ps->execute();
+
+      } catch (PDOException $e) {
+
+        exit();
+
+      }
+
+      header('Location: .');
+      exit();
+
+    }
 
   }
 

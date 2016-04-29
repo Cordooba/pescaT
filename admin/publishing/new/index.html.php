@@ -14,7 +14,7 @@
 
         <div class="panel-body">
 
-          <form class="form-horizontal" role="form" method="POST" action="?addUsser">
+          <form class="form-horizontal" role="form" method="POST" action="?addPublishing">
 
               <div class="form-group">
                   <label class="col-md-3 control-label">Titulo</label>
@@ -22,8 +22,8 @@
                   <div class="col-md-6">
                       <input type="text" class="form-control" name="title" value="<?php if(isset($title)) echo $title;?>" >
 
-                      <?php if ( isset($errores['']) ) : ?>
-                        <p class="text-danger"><?=$errores['']?></p>
+                      <?php if ( isset($errores['title']) ) : ?>
+                        <p class="text-danger"><?=$errores['title']?></p>
                       <?php endif ; ?>
                   </div>
               </div>
@@ -34,8 +34,8 @@
                   <div class="col-md-6">
                       <input type="text" class="form-control" name="content" value="<?php if(isset($content)) echo $content;?>" >
 
-                      <?php if ( isset($errores['']) ) : ?>
-                        <p class="text-danger"><?=$errores['']?></p>
+                      <?php if ( isset($errores['content']) ) : ?>
+                        <p class="text-danger"><?=$errores['content']?></p>
                       <?php endif ; ?>
 
                   </div>

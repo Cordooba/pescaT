@@ -10,11 +10,11 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Publicaciones</div>
+        <div class="panel-heading text-center">Listado de Favoritos</div>
 
           <div class="panel-body">
 
-            <?php if (!empty($arrayPublishingUsser)) : ?>
+            <?php if (!empty($favorites)) : ?>
 
             <table class="table table-striped">
 
@@ -31,7 +31,7 @@
                       Email
                     </th>
                     <th class="text-center">
-                      Id Usuario
+                      Título de Publicación
                     </th>
                     <th class="text-center">
                       Fecha de Creación
@@ -45,16 +45,16 @@
 
       					<tbody>
 
-                    <?php foreach ( $arrayPublishingUsser as $publishing ) : ?>
+                    <?php foreach ( $favorites as $favorite ) : ?>
                       <tr class="text-center">
-                        <td><?=$publishing['id']?></td>
-                        <td><?=$publishing['name']?></td>
-                        <td><?=$publishing['email']?></td>
-                        <td><?=$publishing['idUsser']?></td>
-                        <td><?=$publishing['fecha']?></td>
+                        <td><?=$favorite['id']?></td>
+                        <td><?=$favorite['name']?></td>
+                        <td><?=$favorite['email']?></td>
+                        <td><?=$favorite['title']?></td>
+                        <td><?=$favorite['fecha']?></td>
                         <td>
-                          <form class="" action="?deletePublishing" method="POST">
-                            <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
+                          <form class="" action="?deleteFavorite" method="POST">
+                            <input type="hidden" name="idFavorite" value="<?=$favorite['id']?>">
                             <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                           </form>
                         </td>
@@ -67,13 +67,11 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen publicaciones...</h1>
+              <h1 class="text-center">No existen favoritos...</h1>
 
             <?php endif ; ?>
 
-              <a class="btn btn-primary" href="new" role="button">Nueva</a>
-
-              <a class="btn btn-primary" href="deleted" role="button">Eliminadas</a>
+              <a class="btn btn-primary" href="deleted" role="button">Eliminados</a>
 
           </div>
 

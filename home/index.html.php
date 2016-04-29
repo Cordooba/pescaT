@@ -10,7 +10,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">De actualidad...</div>
+      <div class="panel-heading text-center ">De actualidad...</div>
 
         <div class="panel-body">
 
@@ -25,18 +25,25 @@
 
                       <td class="text-center">
 
-                        <?=$publishing['content']?>
-                        <br />
-                        <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
-                        <br />
-                        <strong>Fecha :</strong> <?=$publishing['fecha']?>
-                        <br />
-                        Comentar
+                          <input type="hidden" name="id" value="<?=$publishing['id']?>">
+                          <strong><?=$publishing['title']?></strong>
+                          <br />
+                          <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
+                          <br />
+                          <strong>Fecha :</strong> <?=$publishing['fecha']?>
+                          <br />
+
+                        <strong>Más</strong>
+                        <form class="" action="" method="POST" style="display: inline">
+                          <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
+                          <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-commenting fa-2x" aria-hidden="true"></i></button>
+                        </form>
+                        <strong>Comentar</strong>
                         <form class="" action="" method="POST" style="display: inline">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></button>
                         </form>
-                        Lo pesco
+                        <strong>Lo pesco</strong>
                         <form class="" action="" method="POST" style="display: inline">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button>

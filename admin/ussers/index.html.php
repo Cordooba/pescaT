@@ -59,7 +59,7 @@
                         <td>
                           <form class="" action="?deleteUsser" method="POST">
                             <input type="hidden" name="idUsser" value="<?=$usser['id']?>">
-                            <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></button>
                           </form>
                         </td>
                       </tr>

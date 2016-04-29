@@ -25,6 +25,10 @@
 
                   <li><a href="../../../admin/publishing" title="Publicaciones"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i></a></li>
 
+                  <li><a href="../../../admin/comments" title="Comentarios"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a></li>
+
+                  <li><a href="../../../admin/favorites" title="Favoritos"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></a></li>
+
               </ul>
 
               <ul class="nav navbar-nav navbar-right">

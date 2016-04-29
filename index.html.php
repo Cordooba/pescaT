@@ -147,7 +147,7 @@
                                 <label class="col-md-4 control-label">Sexo</label>
 
                                 <div class="col-md-6">
-                                  <input type="radio" name="sex" value="Hombre" <?php if(isset($sex) && $sex == 'Hombre') echo 'checked' ;?>>Hombre
+                                  <input type="radio" name="sex" value="Hombre" checked <?php if(isset($sex) && $sex == 'Hombre') echo 'checked' ;?>>Hombre
                                   <input type="radio" name="sex" value="Mujer" <?php if(isset($sex) && $sex == 'Mujer') echo 'checked' ;?>>Mujer
 
                                   <?php if ( isset($errores['sex']) ) : ?>

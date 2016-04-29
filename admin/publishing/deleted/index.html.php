@@ -25,9 +25,6 @@
                   Id
                 </th>
                 <th class="text-center">
-                  Contenido
-                </th>
-                <th class="text-center">
                   Apellidos
                 </th>
                 <th class="text-center">
@@ -51,7 +48,6 @@
                   <?php foreach ( $arrayPublishingUsserDeleted as $publishing ) : ?>
                     <tr class="text-center">
                       <td><?=$publishing['id']?></td>
-                      <td><?=$publishing['content']?></td>
                       <td><?=$publishing['name']?></td>
                       <td><?=$publishing['email']?></td>
                       <td><?=$publishing['idUsser']?></td>

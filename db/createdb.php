@@ -59,8 +59,8 @@ try{
 	$sql = "CREATE TABLE publishing (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
 		idUsser			  	 				INT,
-		title										VARCHAR(50),
-		content 								LONGTEXT,
+		title										VARCHAR(50) NOT NULL,
+		content 								LONGTEXT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
@@ -107,6 +107,8 @@ try{
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
 		idUsser			  	 				INT,
 		idPublishing						INT,
+		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
 		FOREIGN KEY (idUsser) REFERENCES ussers (id)
 						ON UPDATE CASCADE
@@ -132,8 +134,7 @@ try{
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
 		idUsser			  	 				INT,
 		idPublishing						INT,
-		title										VARCHAR(40),
-		content 								LONGTEXT,
+		content 								LONGTEXT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		updated_at  	 					TIMESTAMP NULL DEFAULT NULL,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
