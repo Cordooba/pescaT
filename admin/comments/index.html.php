@@ -38,6 +38,9 @@
                       Fecha de Creación
                     </th>
                     <th class="text-center">
+                      Visualizar
+                    </th>
+                    <th class="text-center">
                       Eliminar
                     </th>
                   </tr>
@@ -53,6 +56,9 @@
                         <td><?=$comment['email']?></td>
                         <td><?=$comment['title']?></td>
                         <td><?=$comment['fecha']?></td>
+                        <td>
+                          <a href="view?id=<?=$comment['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
+                        </td>
                         <td>
                           <form class="" action="?deleteComment" method="POST">
                             <input type="hidden" name="idComment" value="<?=$comment['id']?>">
