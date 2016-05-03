@@ -31,6 +31,8 @@
 
                   <li><a href="../../../admin/locations" title="Ubicaciones"><i class="fa fa-map fa-2x" aria-hidden="true"></i></a></li>
 
+                    <li><a href="../../../admin/fishes" title="Peces"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a></li>
+
               </ul>
 
               <ul class="nav navbar-nav navbar-right">

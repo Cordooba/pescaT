@@ -80,6 +80,16 @@
 
               </tr>
 
+              <tr>
+
+                <td class="text-center">
+
+                  <a href="fishes"><i class="fa fa-map-marker" aria-hidden="true"></i>   Administración de Peces</a>
+
+                </td>
+
+              </tr>
+
             </tbody>
 
           </table>
