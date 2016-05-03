@@ -2,6 +2,45 @@
 
   require_once '../../../db/connectdb.php';
 
+  if ( isset($_GET['updateComment']) ) {
+
+    $id = htmlspecialchars($_POST['idComment'], ENT_QUOTES, 'UTF-8');
+    $content = htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8');
+    $errores = [];
+
+    if ($content == "") {
+
+      $errores['emptyContent'] = 'El contenido no puede ser vacío.';
+
+    }
+
+    if ( empty($errores) ) {
+
+      try {
+
+        $sql = "UPDATE comments SET content = :content, updated_at = NOW() WHERE id = :id";
+
+        $ps = $pdo->prepare($sql);
+
+        $ps->bindValue(':content', $content);
+        $ps->bindValue(':id', $id);
+
+        $ps->execute();
+
+      } catch (PDOException $e) {
+
+        header('Location: .');
+        exit();
+
+      }
+
+      header('Location: ..');
+      exit();
+
+    }
+
+  }
+
   $idComment = $_GET['id'];
 
   if ( is_numeric($idComment) ) {

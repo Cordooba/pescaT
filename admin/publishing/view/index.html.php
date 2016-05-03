@@ -3,12 +3,16 @@
   require_once '../../../templates/headerAdminXxxXxx.php';
 
 ?>
+
 <div class="container">
 
   <div class="col-lg-8 col-md-offset-2">
+
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center "><input type="text" name="" value="<?=$publishing['title']?>"></div>
+      <form class="" action="?updatePublishing" method="POST">
+
+      <div class="panel-heading text-center "><input type="text" name="title" value="<?=$publishing['title']?>"></div>
 
         <div class="panel-body">
 
@@ -20,12 +24,18 @@
 
                       <td class="text-center">
 
-                        <textarea name="" rows="8" cols="80"><?=$publishing['content']?></textarea>
+                        <textarea name="content" rows="8" cols="80"><?=$publishing['content']?></textarea>
 
-                        <form class="" action="?updatePublishing" method="POST">
-                          <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
-                          <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-refresh fa-2x" aria-hidden="true"></i></button>
-                        </form>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+
+                      <td class="text-center">
+
+                        <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
+                        <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-refresh fa-2x" aria-hidden="true"></i></button>
 
                       </td>
 
@@ -37,9 +47,7 @@
 
         </div>
 
-      </div>
-
-    </div>
+      </form>
 
     </div>
 

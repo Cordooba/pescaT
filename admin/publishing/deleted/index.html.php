@@ -37,6 +37,9 @@
                   Fecha de Creación
                 </th>
                 <th class="text-center">
+                  Visualizar
+                </th>
+                <th class="text-center">
                   Actualizar
                 </th>
               </tr>
@@ -52,6 +55,9 @@
                       <td><?=$publishing['email']?></td>
                       <td><?=$publishing['idUsser']?></td>
                       <td><?=$publishing['created_at']?></td>
+                      <td>
+                        <a href="view?id=<?=$publishing['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
+                      </td>
                       <td>
                         <form class="" action="?updatePublishing" method="POST">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">

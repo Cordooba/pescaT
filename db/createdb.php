@@ -31,7 +31,7 @@ try{
 
 	$sql = "CREATE TABLE logins (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT,
+		idUsser			  	 				INT NOT NULL,
 		httpUserAgent   				VARCHAR(250) NOT NULL,
 		serverSoftware					VARCHAR(100) NOT NULL,
 		serverProtocol   				VARCHAR(25) NOT NULL,
@@ -58,7 +58,7 @@ try{
 
 	$sql = "CREATE TABLE publishing (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT,
+		idUsser			  	 				INT NOT NULL,
 		title										VARCHAR(50) NOT NULL,
 		content 								LONGTEXT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -82,8 +82,8 @@ try{
 
 	$sql = "CREATE TABLE usserFriends (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT,
-		idUsserAdd							INT,
+		idUsser			  	 				INT NOT NULL,
+		idUsserAdd							INT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
@@ -105,8 +105,8 @@ try{
 
 	$sql = "CREATE TABLE favorites (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT,
-		idPublishing						INT,
+		idUsser			  	 				INT NOT NULL,
+		idPublishing						INT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
@@ -132,8 +132,8 @@ try{
 
 	$sql = "CREATE TABLE comments (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT,
-		idPublishing						INT,
+		idUsser			  	 				INT NOT NULL,
+		idPublishing						INT NOT NULL,
 		content 								LONGTEXT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		updated_at  	 					TIMESTAMP NULL DEFAULT NULL,
@@ -181,6 +181,7 @@ try{
 	$sql = "CREATE TABLE fishMaps (
 		id 			       INT AUTO_INCREMENT PRIMARY KEY,
 		fish					 VARCHAR(50) NOT NULL,
+		fishType 			 ENUM('Agua dulce','Agua salada') NOT NULL,
 		latitud				 DECIMAL(10,8) NOT NULL,
 		longitud			 DECIMAL(11,8) NOT NULL,
 		created_at	   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

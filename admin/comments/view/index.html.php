@@ -8,38 +8,44 @@
   <div class="col-lg-8 col-md-offset-2">
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center "></div>
+      <form class="" action="?updateComment" method="POST">
 
-        <div class="panel-body">
+        <div class="panel-heading text-center "></div>
 
-          <table class="table table-striped">
+          <div class="panel-body">
 
-              <tbody>
+            <table class="table table-striped">
 
-                    <tr>
+                <tbody>
 
-                      <td class="text-center">
+                      <tr>
 
-                        <textarea name="" rows="8" cols="80"><?=$comment['content']?></textarea>
+                        <td class="text-center">
 
-                        <form class="" action="?updatePublishing" method="POST">
-                          <input type="hidden" name="idPublishing" value="<?=$comment['id']?>">
+                          <textarea name="content" rows="8" cols="80"><?=$comment['content']?></textarea>
+
+                        </td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td class="text-center">
+
+                          <input type="hidden" name="idComment" value="<?=$comment['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-refresh fa-2x" aria-hidden="true"></i></button>
-                        </form>
 
-                      </td>
+                        </td>
 
-                    </tr>
+                      </tr>
 
-              </tbody>
+                </tbody>
 
-            </table>
+              </table>
 
-        </div>
+          </div>
 
-      </div>
-
-    </div>
+      </form>
 
     </div>
 

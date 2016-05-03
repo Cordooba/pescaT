@@ -37,6 +37,9 @@
                     Fecha de Creación
                   </th>
                   <th class="text-center">
+                    Visualizar
+                  </th>
+                  <th class="text-center">
                     Actualizar
                   </th>
                 </tr>
@@ -52,6 +55,9 @@
                       <td><?=$commentDeleted['email']?></td>
                       <td><?=$commentDeleted['title']?></td>
                       <td><?=$commentDeleted['fecha']?></td>
+                      <td>
+                        <a href="view?id=<?=$commentDeleted['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
+                      </td>
                       <td>
                         <form class="" action="?updateComment" method="POST">
                           <input type="hidden" name="idComment" value="<?=$commentDeleted['id']?>">

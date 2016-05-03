@@ -71,9 +71,9 @@
 
             <?php endif ; ?>
 
-              <a class="btn btn-primary" href="deleted" role="button">Nueva</a>
+              <a class="btn btn-primary" href="new" role="button">Nueva</a>
 
-              <a class="btn btn-primary" href="new" role="button">Eliminadas</a>
+              <a class="btn btn-primary" href="deleted" role="button">Eliminadas</a>
 
             </div>
 
