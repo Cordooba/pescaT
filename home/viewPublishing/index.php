@@ -8,7 +8,7 @@
 
     try{
 
-      $sql = 'SELECT * FROM publishing WHERE id = :idPublishing';
+      $sql = 'SELECT * FROM publishing WHERE id = :idPublishing AND deleted_at IS NULL';
       $ps = $pdo->prepare($sql);
       $ps->bindValue(':idPublishing', $idPublishing);
       $ps->execute();

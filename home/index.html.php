@@ -73,24 +73,22 @@
 
                           <input type="hidden" name="id" value="<?=$publishing['id']?>">
                           <strong><?=$publishing['title']?></strong>
-                          <br />
+                          <br / >
                           <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
                           <br />
                           <strong>Fecha :</strong> <?=$publishing['fecha']?>
                           <br />
 
-                        <strong>Más</strong>
-                        <form class="" action="" method="POST" style="display: inline">
-                          <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
-                          <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-commenting fa-2x" aria-hidden="true"></i></button>
-                        </form>
+                        <a href="viewPublishing?id=<?=$publishing['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
+                        <br>
                         <strong>Comentar</strong>
-                        <form class="" action="" method="POST" style="display: inline">
+                        <form class="" action="" method="POST" style="display: inline-block">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></button>
                         </form>
+
                         <strong>Lo pesco</strong>
-                        <form class="" action="" method="POST" style="display: inline">
+                        <form class="" action="" method="POST" style="display: inline-block">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button>
                         </form>

@@ -70,6 +70,16 @@
 
               </tr>
 
+              <tr>
+
+                <td class="text-center">
+
+                  <a href="locations"><i class="fa fa-map" aria-hidden="true"></i>   Administración de Ubicaciones</a>
+
+                </td>
+
+              </tr>
+
             </tbody>
 
           </table>

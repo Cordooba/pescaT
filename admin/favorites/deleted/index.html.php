@@ -10,7 +10,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Listado de Favoritos</div>
+      <div class="panel-heading text-center">Listado de Favoritos Eliminados</div>
 
         <div class="panel-body">
 

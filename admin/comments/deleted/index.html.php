@@ -10,7 +10,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Listado de Comentarios</div>
+      <div class="panel-heading text-center">Listado de Comentarios Eliminados</div>
 
         <div class="panel-body">
 
