@@ -1,6 +1,20 @@
 <?php
 
   require_once '../../../../templates/headerAdminXxxXxxXxx.php';
+  require_once '../../../../db/connectdb.php';
+
+  global $base_url;
+
+  if( !isset($_SESSION['user']) ){
+
+        header("Location: ".$base_url);
+        exit();
+
+    }else{
+
+        $user = $_SESSION['user'];
+
+    }
 
 ?>
 <div class="container">

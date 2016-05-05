@@ -2,6 +2,8 @@
 
   require_once '../db/connectdb.php';
 
+  global $base_url;
+
   try{
 
     $sql = 'SELECT *, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL';
@@ -20,8 +22,21 @@
 
   }
 
+  session_start();
 
+  if( isset($_GET['logout']) ){
 
-  require_once 'index.html.php';
+    unset($_SESSION['user']);
+
+    session_destroy();
+
+    header("Location: ".$base_url);
+
+    }else{
+
+        require_once 'index.html.php';
+
+    }
+
 
 ?>

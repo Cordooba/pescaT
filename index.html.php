@@ -1,3 +1,19 @@
+<?php
+
+    $stringSearch = '@admin.com';
+
+    if( isset($_SESSION['user']) && strstr($_SESSION['user'], $stringSearch) ){
+
+        header("Location: admin");
+        exit();
+
+    }elseif ( isset($_SESSION['user']) ) {
+
+      header("Location: home");
+      exit();
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -35,13 +35,13 @@
 
                     <li><a href="" title="Mensajes"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li>
 
-                    <li><a href="" title="Ubicaciones"><i class="fa fa-map-o fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="../../home/maps" title="Ubicaciones"><i class="fa fa-map-o fa-2x" aria-hidden="true"></i></a></li>
 
                   </ul>
 
                   <ul class="nav navbar-nav navbar-right">
 
-                    <form class="" role="form" action="" method="POST">
+                    <form class="" role="form" action="?logout" method="POST">
 
                       <li>
                         <div class="form-group">

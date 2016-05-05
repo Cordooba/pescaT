@@ -2,6 +2,8 @@
 
   require_once '../../db/connectdb.php';
 
+  global $base_url;
+
   $idPublishing = $_GET['id'];
 
   if ( is_numeric($idPublishing) ) {
@@ -21,8 +23,26 @@
 
     $publishing = $ps->fetch(PDO::FETCH_ASSOC);
 
-    require_once 'index.html.php';
-
   }
+
+  session_start();
+
+  if( isset($_GET['logout']) ){
+
+    unset($_SESSION['user']);
+
+    session_destroy();
+
+    header("Location: ".$base_url);
+
+    exit();
+
+    }else{
+
+      require_once 'index.html.php';
+
+      exit();
+
+    }
 
 ?>

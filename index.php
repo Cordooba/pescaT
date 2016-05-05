@@ -2,6 +2,8 @@
 
     require_once 'db/connectdb.php';
 
+    global $base_url;
+
     if ( isset($_GET['addUsser']) ) {
 
       $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
@@ -80,6 +82,8 @@
 
     }
 
+    session_start();
+
     if ( isset($_GET['login']) ) {
 
       $email = htmlspecialchars($_POST['emailLogin'], ENT_QUOTES, 'UTF-8');
@@ -109,10 +113,18 @@
 
       if ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) ) {
 
+        $name = $usser['email'];
+
+        $_SESSION['user'] = $name;
+
         header("Location: admin");
     		exit();
 
       }elseif ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) == false ) {
+
+        $name = $usser['email'];
+
+        $_SESSION['user'] = $name;
 
     		$sql = "INSERT INTO logins (idUsser, httpUserAgent, serverSoftware, serverProtocol, httpAcceptLanguage, remoteAddr) VALUES (:idUsser, :httpUserAgent, :serverSoftware, :serverProtocol, :httpAcceptLanguage, :remoteAddr)";
 
@@ -131,13 +143,16 @@
 
       }else{
 
-        header("Location: .");
+        header("Location: ".$base_url);
     		exit();
 
       }
 
+    }else{
+
+      require_once 'index.html.php';
+
     }
 
-    require_once 'index.html.php';
 
 ?>
