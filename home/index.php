@@ -24,17 +24,32 @@
 
   session_start();
 
-  if( isset($_GET['logout']) ){
+   if( isset($_GET['logout']) ){
 
-    unset($_SESSION['user']);
+     unset($_SESSION['user']);
 
-    session_destroy();
+     session_destroy();
 
-    header("Location: ".$base_url);
+     header("Location: ".$base_url);
 
-    }else{
+   }elseif (isset($_GET['logoutUsser'])) {
 
-        require_once 'index.html.php';
+      unset($_SESSION['id']);
+      unset($_SESSION['name']);
+      unset($_SESSION['subname']);
+      unset($_SESSION['email']);
+      unset($_SESSION['bday']);
+      unset($_SESSION['sex']);
+      unset($_SESSION['locality']);
+      unset($_SESSION['typeFishing']);
+
+      session_destroy();
+
+      header("Location: ".$base_url);
+
+   }else{
+
+      require_once 'index.html.php';
 
     }
 

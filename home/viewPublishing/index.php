@@ -27,9 +27,16 @@
 
   session_start();
 
-  if( isset($_GET['logout']) ){
+  if( isset($_GET['logoutUsser']) ){
 
-    unset($_SESSION['user']);
+    unset($_SESSION['id']);
+    unset($_SESSION['name']);
+    unset($_SESSION['subname']);
+    unset($_SESSION['email']);
+    unset($_SESSION['bday']);
+    unset($_SESSION['sex']);
+    unset($_SESSION['locality']);
+    unset($_SESSION['typeFishing']);
 
     session_destroy();
 

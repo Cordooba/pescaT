@@ -49,7 +49,7 @@
           $errores['sex'] = 'Debes selecionar tu sexo.';
       }
 
-      $salt = 'G=}N3QcjgP8+C-ojEYX0|S+ortn(?C?D1d5VHc|wbT-c{rY^RvL-R m>=LzQ)^';
+      $salt = 'G=)N3QcjgP8+C-ojEYX0|S+ortn(?C?D1d5VHc|wbT-c(rY^RvL-R m>=LzQ)^';
       $pass = md5($pass.$salt);
 
       if ( empty($errores) ) {
@@ -89,12 +89,12 @@
       $email = htmlspecialchars($_POST['emailLogin'], ENT_QUOTES, 'UTF-8');
       $pass = htmlspecialchars($_POST['passLogin'], ENT_QUOTES, 'UTF-8');
 
-      $salt = 'G=}N3QcjgP8+C-ojEYX0|S+ortn(?C?D1d5VHc|wbT-c{rY^RvL-R m>=LzQ)^';
+      $salt = 'G=)N3QcjgP8+C-ojEYX0|S+ortn(?C?D1d5VHc|wbT-c(rY^RvL-R m>=LzQ)^';
       $pass = md5($pass.$salt);
 
       try {
 
-        $sql = 'SELECT id, email, pass FROM ussers WHERE email=:email AND pass=:pass AND deleted_at IS NULL';
+        $sql = 'SELECT * FROM ussers WHERE email=:email AND pass=:pass AND deleted_at IS NULL';
 
         $ps = $pdo->prepare($sql);
 
@@ -114,17 +114,31 @@
       if ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) ) {
 
         $name = $usser['email'];
-
         $_SESSION['user'] = $name;
 
         header("Location: admin");
     		exit();
 
-      }elseif ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) == false ) {
+       }elseif ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) == false ) {
 
-        $name = $usser['email'];
+        $id = $usser['id'];
+        $name = $usser['name'];
+        $subname = $usser['subname'];
+        $email = $usser['email'];
+        $bday = $usser['bday'];
+        $sex = $usser['sex'];
+        $locality = $usser['locality'];
+        $typeFishing = $usser['typeFishing'];
 
-        $_SESSION['user'] = $name;
+
+        $_SESSION['id'] = $id;
+        $_SESSION['name'] = $name;
+        $_SESSION['subname'] = $subname;
+        $_SESSION['email'] = $email;
+        $_SESSION['bday'] = $bday;
+        $_SESSION['sex'] = $sex;
+        $_SESSION['locality'] = $locality;
+        $_SESSION['typeFishing'] = $typeFishing;
 
     		$sql = "INSERT INTO logins (idUsser, httpUserAgent, serverSoftware, serverProtocol, httpAcceptLanguage, remoteAddr) VALUES (:idUsser, :httpUserAgent, :serverSoftware, :serverProtocol, :httpAcceptLanguage, :remoteAddr)";
 

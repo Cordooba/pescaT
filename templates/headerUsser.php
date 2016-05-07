@@ -41,7 +41,7 @@
 
                   <ul class="nav navbar-nav navbar-right">
 
-                    <form class="" role="form" action="?logout" method="POST">
+                    <form class="" role="form" action="?logoutUsser" method="POST">
 
                       <li>
                         <div class="form-group">

@@ -30,7 +30,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NOT NULL && ussers.deleted_at IS NULL';
+    $sql = 'SELECT * FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NOT NULL && ussers.deleted_at IS NULL ';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 
