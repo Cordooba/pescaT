@@ -38,7 +38,7 @@
 
                         <tr class="text-center">
                           <td>
-                            <?=$_SESSION['name']?> <?=$_SESSION['subname']?>
+                            <?=$usser['name']?> <?=$usser['subname']?>
                           </td>
                         </tr>
 
@@ -50,7 +50,7 @@
 
                         <tr class="text-center">
                           <td>
-                            <?=$_SESSION['email']?>
+                            <?=$usser['email']?>
                           </td>
                         </tr>
 
@@ -62,7 +62,7 @@
 
                         <tr class="text-center">
                           <td>
-                            <?=$_SESSION['bday']?>
+                            <?=$usser['bday']?>
                           </td>
                         </tr>
 
@@ -74,7 +74,7 @@
 
                         <tr class="text-center">
                           <td>
-                            <?=$_SESSION['locality']?>
+                            <?=$usser['locality']?>
                           </td>
                         </tr>
 
@@ -86,7 +86,7 @@
 
                         <tr class="text-center">
                           <td>
-                            <?=$_SESSION['sex']?>
+                            <?=$usser['sex']?>
                           </td>
                         </tr>
 
@@ -98,18 +98,8 @@
 
                         <tr class="text-center">
                           <td>
-                            <?=$_SESSION['typeFishing']?>
+                            <?=$usser['typeFishing']?>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
-
-                          <td>
-
-                            <a href="edit?id=<?=$_SESSION['id']?>"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
-
-                          </td>
-
                         </tr>
 
                       </tbody>

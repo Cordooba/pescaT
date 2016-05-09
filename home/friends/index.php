@@ -6,7 +6,28 @@
 
   session_start();
 
-  if( isset($_GET['logoutUsser']) ){
+  if ( isset($_GET['addFriend']) ) {
+
+    $idUsserToAdd = $_POST['idUsser'];
+
+    try {
+
+      $sql = "INSERT INTO usserfriends (idUsser, idUsserAdd) VALUES (:idUsser, :idUsserToAdd)";
+
+      $ps = $pdo->prepare($sql);
+
+      $ps->bindValue(':idUsser', $_SESSION['id']);
+      $ps->bindValue(':idUsserToAdd', $idUsserToAdd);
+
+      $ps->execute();
+
+    }catch (PDOException $e) {
+
+    }
+
+  }
+
+  if ( isset($_GET['logoutUsser']) ) {
 
     unset($_SESSION['id']);
     unset($_SESSION['name']);
@@ -24,6 +45,26 @@
     exit();
 
     }else{
+
+      try {
+
+        $sql = 'SELECT * FROM ussers WHERE id != :id AND deleted_at IS NULL';
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(':id', $_SESSION['id']);
+        $ps->execute();
+
+      } catch (PDOException $e) {
+
+        die("No se ha podido extraer información de la base de datos:". $e->getMessage());
+
+      }
+
+      while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
+
+        $ussers[] = $row;
+
+      }
 
       require_once 'index.html.php';
 

@@ -12,7 +12,7 @@
 
   }catch(PDOException $e) {
 
-  die("No se ha podido extraer información de la base de datos:". $e->getMessage());
+    die("No se ha podido extraer información de la base de datos:". $e->getMessage());
 
   }
 
