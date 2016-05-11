@@ -114,7 +114,7 @@
 
           <?php else : ?>
 
-            <h1 class="text-center">No existen publicaciones...</h1>
+            <h2 class="text-center">No existen publicaciones...</h2>
 
           <?php endif ; ?>
 

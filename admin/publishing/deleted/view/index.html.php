@@ -22,7 +22,7 @@
   <div class="col-lg-8 col-md-offset-2">
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center "><strong><?=$publishing['title']?></strong></div>
+      <div class="panel-heading text-center "><h1><?=$publishing['title']?></h1></div>
 
         <div class="panel-body">
 

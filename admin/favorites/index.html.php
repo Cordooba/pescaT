@@ -24,7 +24,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Favoritos</div>
+        <div class="panel-heading text-center"><h1>Listado de Favoritos</h1></div>
 
           <div class="panel-body">
 
@@ -81,7 +81,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen favoritos...</h1>
+              <h2 class="text-center">No existen favoritos...</h2>
 
             <?php endif ; ?>
 

@@ -22,7 +22,7 @@
 
       try {
 
-        $sql = "INSERT INTO publishing (idUsser, content) VALUES (:idUsser, :content)";
+        $sql = "INSERT INTO publishing (idUsser, content, title) VALUES (:idUsser, :content, :title)";
 
         $ps = $pdo->prepare($sql);
 
@@ -38,7 +38,7 @@
 
       }
 
-      header('Location: .');
+      header('Location: ..');
       exit();
 
     }

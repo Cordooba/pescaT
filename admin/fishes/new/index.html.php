@@ -24,7 +24,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Añadir un pez</div>
+      <div class="panel-heading text-center"><h1>Añadir un pez</h1></div>
 
         <div class="panel-body">
 

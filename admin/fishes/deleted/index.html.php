@@ -24,7 +24,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Peces Eliminadas</div>
+        <div class="panel-heading text-center"><h1>Listado de Peces Eliminadas</h1></div>
 
           <div class="panel-body">
 
@@ -51,7 +51,7 @@
                       Tipo
                     </th>
                     <th class="text-center">
-                      Fecha de Creación
+                      Fecha de Eliminación
                     </th>
                     <th class="text-center">
                       Actualizar
@@ -69,7 +69,7 @@
                         <td><?=$fish['longitud']?></td>
                         <td><?=$fish['fish']?></td>
                         <td><?=$fish['fishType']?></td>
-                        <td><?=$fish['created_at']?></td>
+                        <td><?=$fish['deleted_at']?></td>
                         <td>
                           <form class="" action="?updateFish" method="POST">
                             <input type="hidden" name="idFish" value="<?=$fish['id']?>">
@@ -85,7 +85,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen peces eliminados...</h1>
+              <h2 class="text-center">No existen peces eliminados...</h2>
 
             <?php endif ; ?>
 

@@ -24,7 +24,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Publicaciones</div>
+        <div class="panel-heading text-center"><h1>Listado de Publicaciones</h1></div>
 
           <div class="panel-body">
 
@@ -87,7 +87,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen publicaciones...</h1>
+              <h2 class="text-center">No existen publicaciones...</h2>
 
             <?php endif ; ?>
 

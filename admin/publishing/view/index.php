@@ -1,6 +1,10 @@
 <?php
 
   require_once '../../../db/connectdb.php';
+  
+  global $base_url;
+
+  session_start();
 
   if ( isset($_GET['updatePublishing']) ) {
 
@@ -72,10 +76,6 @@
 
     }
 
-    global $base_url;
-
-    session_start();
-
     if( isset($_GET['logout']) ){
 
       unset($_SESSION['user']);
@@ -88,6 +88,6 @@
 
         require_once 'index.html.php';
 
-      }  
+      }
 
 ?>

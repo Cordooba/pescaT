@@ -25,7 +25,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Comentarios</div>
+        <div class="panel-heading text-center"><h1>Listado de Comentarios</h1></div>
 
           <div class="panel-body">
 
@@ -88,7 +88,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen comentarios...</h1>
+              <h2 class="text-center">No existen comentarios...</h2>
 
             <?php endif ; ?>
 

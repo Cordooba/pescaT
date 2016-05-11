@@ -24,7 +24,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Listado de Publicaciones Eliminadas</div>
+      <div class="panel-heading text-center"><h1>Listado de Publicaciones Eliminadas</h1></div>
 
         <div class="panel-body">
 
@@ -48,7 +48,7 @@
                   Id Usuario
                 </th>
                 <th class="text-center">
-                  Fecha de Creación
+                  Fecha de Eliminación
                 </th>
                 <th class="text-center">
                   Visualizar
@@ -68,7 +68,7 @@
                       <td><?=$publishing['name']?></td>
                       <td><?=$publishing['email']?></td>
                       <td><?=$publishing['idUsser']?></td>
-                      <td><?=$publishing['created_at']?></td>
+                      <td><?=$publishing['deleted_at']?></td>
                       <td>
                         <a href="view?id=<?=$publishing['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
                       </td>
@@ -85,7 +85,7 @@
 
           <?php else : ?>
 
-            <h1 class="text-center">No existen publicaciones eliminadas...</h1>
+            <h2 class="text-center">No existen publicaciones eliminadas...</h2>
 
           <?php endif ; ?>
 

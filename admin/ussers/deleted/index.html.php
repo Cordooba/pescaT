@@ -24,7 +24,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Listado de Usuarios Eliminados</div>
+      <div class="panel-heading text-center"><h1>Listado de Usuarios Eliminados</h1></div>
 
         <div class="panel-body">
 
@@ -83,7 +83,7 @@
 
           <?php else : ?>
 
-            <h1 class="text-center">No existen usuarios eliminados...</h1>
+            <h2 class="text-center">No existen usuarios eliminados...</h2>
 
           <?php endif ; ?>
 

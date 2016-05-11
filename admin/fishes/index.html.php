@@ -24,7 +24,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Peces</div>
+        <div class="panel-heading text-center"><h1>Listado de Peces</h1></div>
 
           <div class="panel-body">
 
@@ -85,7 +85,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen peces...</h1>
+              <h2 class="text-center">No existen peces...</h2>
 
             <?php endif ; ?>
 

@@ -1,18 +1,14 @@
 <?php
 
-  require_once '../../../templates/headerAdminXxxXxx.php';
+  require_once '../../../templates/headerUsserXxxXxx.php';
   require_once '../../../db/connectdb.php';
 
   global $base_url;
 
-  if( !isset($_SESSION['user']) ){
+  if( !isset($_SESSION['id']) && !isset($_SESSION['name']) && !isset($_SESSION['subname']) && !isset($_SESSION['email']) && !isset($_SESSION['bday']) && !isset($_SESSION['sex']) && !isset($_SESSION['locality']) && !isset($_SESSION['typeFishing']) ){
 
         header("Location: ".$base_url);
         exit();
-
-    }else{
-
-        $user = $_SESSION['user'];
 
     }
 
@@ -24,20 +20,20 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center"><h1>Añadir una publicación</h1></div>
+      <div class="panel-heading text-center"><h1>Añadir una mensaje</h1></div>
 
         <div class="panel-body">
 
-          <form class="form-horizontal" role="form" method="POST" action="?addPublishing">
+          <form class="form-horizontal" role="form" method="POST" action="?addMessage">
 
               <div class="form-group">
-                  <label class="col-md-3 control-label">Titulo</label>
+                  <label class="col-md-3 control-label">Asunto</label>
 
                   <div class="col-md-6">
-                      <input type="text" class="form-control" name="title" value="<?php if(isset($title)) echo $title;?>" >
+                      <input type="text" class="form-control" name="subject" value="<?php if(isset($subject)) echo $subject;?>" >
 
-                      <?php if ( isset($errores['title']) ) : ?>
-                        <p class="text-danger"><?=$errores['title']?></p>
+                      <?php if ( isset($errores['subject']) ) : ?>
+                        <p class="text-danger"><?=$errores['subject']?></p>
                       <?php endif ; ?>
                   </div>
               </div>
@@ -57,7 +53,7 @@
 
               <div class="form-group">
 
-                  <label class="col-md-3 control-label">Creado por :</label>
+                  <label class="col-md-3 control-label">Enviar a :</label>
 
                   <div class="col-md-6">
 
@@ -79,7 +75,7 @@
               <div class="form-group">
                   <div class="col-md-6 col-md-offset-5">
                       <button type="submit" class="btn btn-primary">
-                          Añadir  <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                          Enviar  <i class="fa fa-check fa-2x" aria-hidden="true"></i>
                       </button>
                   </div>
               </div>

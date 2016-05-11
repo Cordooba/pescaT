@@ -4,7 +4,7 @@ require_once 'connectdb.php';
 
 try{
 
-	$sql = "CREATE TABLE ussers (
+	$sql = "CREATE TABLE IF NOT EXISTS ussers (
 		id 			       INT AUTO_INCREMENT PRIMARY KEY,
 		name 		       VARCHAR(25) NOT NULL,
     subname 		   VARCHAR(50) NOT NULL,
@@ -29,9 +29,9 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE logins (
+	$sql = "CREATE TABLE IF NOT EXISTS logins (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT NOT NULL,
+		idUsser			  	 				INT,
 		httpUserAgent   				VARCHAR(250) NOT NULL,
 		serverSoftware					VARCHAR(100) NOT NULL,
 		serverProtocol   				VARCHAR(25) NOT NULL,
@@ -41,8 +41,8 @@ try{
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
 		FOREIGN KEY (idUsser) REFERENCES ussers (id)
-						ON UPDATE CASCADE
-						ON DELETE SET NULL
+		 	ON UPDATE CASCADE
+		 	ON DELETE SET NULL
 	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
 
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -56,9 +56,9 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE publishing (
+	$sql = "CREATE TABLE IF NOT EXISTS publishing (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT NOT NULL,
+		idUsser			  	 				INT,
 		title										VARCHAR(50) NOT NULL,
 		content 								LONGTEXT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -80,19 +80,19 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE usserFriends (
-		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT NOT NULL,
-		idUsserAdd							INT NOT NULL,
+	$sql = "CREATE TABLE IF NOT EXISTS usserFriends (
+		id											INT AUTO_INCREMENT PRIMARY KEY,
+		idUsser			  	 				INT,
+		idUsserAdd							INT,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
 		FOREIGN KEY (idUsser) REFERENCES ussers (id)
 						ON UPDATE CASCADE
 						ON DELETE SET NULL,
-		-- FOREIGN KEY (idUsserAdd) REFERENCES ussers (id)
-		-- 				ON UPDATE CASCADE
-		-- 				ON DELETE SET NULL
+		FOREIGN KEY (idUsserAdd) REFERENCES ussers (id)
+						ON UPDATE CASCADE
+						ON DELETE SET NULL		
 
 	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
 
@@ -107,10 +107,10 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE favorites (
+	$sql = "CREATE TABLE IF NOT EXISTS favorites (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT NOT NULL,
-		idPublishing						INT NOT NULL,
+		idUsser			  	 				INT,
+		idPublishing						INT,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
 
@@ -134,10 +134,10 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE comments (
+	$sql = "CREATE TABLE IF NOT EXISTS comments (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
-		idUsser			  	 				INT NOT NULL,
-		idPublishing						INT NOT NULL,
+		idUsser			  	 				INT,
+		idPublishing						INT,
 		content 								LONGTEXT NOT NULL,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		updated_at  	 					TIMESTAMP NULL DEFAULT NULL,
@@ -146,7 +146,7 @@ try{
 		FOREIGN KEY (idUsser) REFERENCES ussers (id)
 						ON UPDATE CASCADE
 						ON DELETE SET NULL,
-		FOREIGN KEY (idPublishing) REFERENCES publishing (id)
+		FOREIGN KEY (idUsser) REFERENCES ussers (id)
 						ON UPDATE CASCADE
 						ON DELETE SET NULL
 	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
@@ -162,7 +162,7 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE locationMaps (
+	$sql = "CREATE TABLE IF NOT EXISTS locationMaps (
 		id 			       INT AUTO_INCREMENT PRIMARY KEY,
 		location			 VARCHAR(50) NOT NULL,
 		latitud				 DECIMAL(10,8) NOT NULL,
@@ -182,7 +182,7 @@ try{
 
 try{
 
-	$sql = "CREATE TABLE fishMaps (
+	$sql = "CREATE TABLE IF NOT EXISTS fishMaps (
 		id 			       INT AUTO_INCREMENT PRIMARY KEY,
 		fish					 VARCHAR(50) NOT NULL,
 		fishType 			 ENUM('Agua dulce','Agua salada') NOT NULL,
@@ -198,6 +198,33 @@ try{
 }catch(PDOException $e){
 
 		die("No se ha podido crear la tabla 'fishMaps' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "CREATE TABLE IF NOT EXISTS messages (
+		id 			       INT AUTO_INCREMENT PRIMARY KEY,
+		idUsser				 INT,
+		idUsserTo			 INT,
+		subject				 VARCHAR(40) NOT NULL,
+		content 			 VARCHAR(250) NOT NULL,
+		created_at	   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+		deleted_at  	 TIMESTAMP NULL DEFAULT NULL,
+			FOREIGN KEY (idUsser) REFERENCES ussers (id)
+							ON UPDATE CASCADE
+							ON DELETE SET NULL,
+			FOREIGN KEY (idUsserTo) REFERENCES ussers (id)
+							ON UPDATE CASCADE
+							ON DELETE SET NULL
+	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'messages' : ". $e->getMessage());
 
 }
 

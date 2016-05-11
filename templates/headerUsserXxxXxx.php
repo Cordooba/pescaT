@@ -33,7 +33,7 @@
 
                     <li><a href="../../../home/friends" title="Amigos"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a></li>
 
-                    <li><a href="" title="Mensajes"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="../../../home/messages" title="Mensajes"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li>
 
                     <li><a href="../../../home/maps" title="Ubicaciones"><i class="fa fa-map-o fa-2x" aria-hidden="true"></i></a></li>
 

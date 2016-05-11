@@ -34,9 +34,6 @@
                           <td>
                             <strong>Nombre</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$_SESSION['name']?> <?=$_SESSION['subname']?>
                           </td>
@@ -46,9 +43,6 @@
                           <td>
                             <strong>Correo electrónico</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$_SESSION['email']?>
                           </td>
@@ -58,9 +52,6 @@
                           <td>
                             <strong>Fecha de nacimiento</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$_SESSION['bday']?>
                           </td>
@@ -70,9 +61,6 @@
                           <td>
                             <strong>Localidad</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$_SESSION['locality']?>
                           </td>
@@ -82,9 +70,6 @@
                           <td>
                             <strong>Sexo</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$_SESSION['sex']?>
                           </td>
@@ -94,9 +79,6 @@
                           <td>
                             <strong>Tipo de pesca</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$_SESSION['typeFishing']?>
                           </td>
@@ -104,7 +86,7 @@
 
                         <tr class="text-center">
 
-                          <td>
+                          <td colspan="2">
 
                             <a href="edit?id=<?=$_SESSION['id']?>"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
 

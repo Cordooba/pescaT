@@ -24,7 +24,7 @@
 
       <div class="panel panel-default">
 
-        <div class="panel-heading text-center">Listado de Ubicaciones Eliminadas</div>
+        <div class="panel-heading text-center"><h1>Listado de Ubicaciones Eliminadas</h1></div>
 
           <div class="panel-body">
 
@@ -48,7 +48,7 @@
                       Ubicación
                     </th>
                     <th class="text-center">
-                      Fecha de Creación
+                      Fecha de Eliminación
                     </th>
                     <th class="text-center">
                       Actualizar
@@ -65,7 +65,7 @@
                         <td><?=$location['latitud']?></td>
                         <td><?=$location['longitud']?></td>
                         <td><?=$location['location']?></td>
-                        <td><?=$location['created_at']?></td>
+                        <td><?=$location['deleted_at']?></td>
                         <td>
                           <form class="" action="?updateLocation" method="POST">
                             <input type="hidden" name="idLocation" value="<?=$location['id']?>">
@@ -81,7 +81,7 @@
 
             <?php else : ?>
 
-              <h1 class="text-center">No existen ubicaciones eliminadas...</h1>
+              <h2 class="text-center">No existen ubicaciones eliminadas...</h2>
 
             <?php endif ; ?>
 

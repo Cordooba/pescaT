@@ -34,9 +34,6 @@
                           <td>
                             <strong>Nombre</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$usser['name']?> <?=$usser['subname']?>
                           </td>
@@ -46,9 +43,6 @@
                           <td>
                             <strong>Correo electrónico</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$usser['email']?>
                           </td>
@@ -58,9 +52,6 @@
                           <td>
                             <strong>Fecha de nacimiento</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$usser['bday']?>
                           </td>
@@ -70,9 +61,6 @@
                           <td>
                             <strong>Localidad</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$usser['locality']?>
                           </td>
@@ -82,9 +70,6 @@
                           <td>
                             <strong>Sexo</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$usser['sex']?>
                           </td>
@@ -94,9 +79,6 @@
                           <td>
                             <strong>Tipo de pesca</strong>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
                           <td>
                             <?=$usser['typeFishing']?>
                           </td>

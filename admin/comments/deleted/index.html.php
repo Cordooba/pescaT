@@ -24,7 +24,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center">Listado de Comentarios Eliminados</div>
+      <div class="panel-heading text-center"><h1>Listado de Comentarios Eliminados</h1></div>
 
         <div class="panel-body">
 
@@ -48,7 +48,7 @@
                     Título de Publicación
                   </th>
                   <th class="text-center">
-                    Fecha de Creación
+                    Fecha de Eliminación
                   </th>
                   <th class="text-center">
                     Visualizar
@@ -87,7 +87,7 @@
 
           <?php else : ?>
 
-            <h1 class="text-center">No existen comentarios eliminados...</h1>
+            <h2 class="text-center">No existen comentarios eliminados...</h2>
 
           <?php endif ; ?>
 
