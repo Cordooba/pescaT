@@ -5,14 +5,10 @@
 
   global $base_url;
 
-  if( !isset($_SESSION['user']) ){
+  if( !isset($_SESSION['user']) && !isset($_SESSION['userId']) ){
 
         header("Location: ".$base_url);
         exit();
-
-    }else{
-
-        $user = $_SESSION['user'];
 
     }
 
@@ -79,6 +75,16 @@
                 <td class="text-center">
 
                   <a href="favorites"><i class="fa fa-plus-square" aria-hidden="true"></i>   Administración de Favoritos</a>
+
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td class="text-center">
+
+                  <a href="messages"><i class="fa fa-envelope" aria-hidden="true"></i>   Administración de Mensajes</a>
 
                 </td>
 

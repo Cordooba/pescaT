@@ -22,7 +22,7 @@
 
     if ( $content == "" ) {
 
-    $errores['content'] = 'Debes introducir contenido para la publicación.';
+    $errores['content'] = 'Debes introducir contenido para el mensaje.';
 
     }
 

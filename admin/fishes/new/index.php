@@ -57,6 +57,7 @@
   if( isset($_GET['logout']) ){
 
     unset($_SESSION['user']);
+    unset($_SESSION['userId']);
 
     session_destroy();
 

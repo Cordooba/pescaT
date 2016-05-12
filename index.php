@@ -114,7 +114,9 @@
       if ( $email == $usser['email'] && $pass == $usser['pass'] && strstr($usser['email'], $stringSearch) ) {
 
         $name = $usser['email'];
+        $id = $usser['id'];
         $_SESSION['user'] = $name;
+        $_SESSION['userId'] = $id;
 
         header("Location: admin");
     		exit();

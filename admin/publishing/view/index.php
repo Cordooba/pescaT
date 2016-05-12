@@ -1,7 +1,7 @@
 <?php
 
   require_once '../../../db/connectdb.php';
-  
+
   global $base_url;
 
   session_start();
@@ -79,6 +79,7 @@
     if( isset($_GET['logout']) ){
 
       unset($_SESSION['user']);
+      unset($_SESSION['userId']);
 
       session_destroy();
 

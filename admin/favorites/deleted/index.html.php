@@ -5,14 +5,10 @@
 
   global $base_url;
 
-  if( !isset($_SESSION['user']) ){
+  if( !isset($_SESSION['user']) && !isset($_SESSION['userId']) ){
 
         header("Location: ".$base_url);
         exit();
-
-    }else{
-
-        $user = $_SESSION['user'];
 
     }
 
