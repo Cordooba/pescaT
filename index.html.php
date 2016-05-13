@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" style="margin-top : 4px;">
                                         Entrar   <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
                                     </button>
                                 </div>

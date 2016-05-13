@@ -28,7 +28,7 @@
                   <label class="col-md-3 control-label">Titulo</label>
 
                   <div class="col-md-7">
-                      <input type="text" class="form-control" name="title" value="" >
+                      <input type="text" class="form-control" name="title" value="<?php if(isset($title)) echo $title;?>" >
 
                       <?php if ( isset($errores['title']) ) : ?>
                         <p class="text-danger"><?=$errores['title']?></p>
@@ -40,7 +40,7 @@
                   <label class="col-md-3 control-label">Contenido</label>
 
                   <div class="col-md-7">
-                      <textarea class="form-control" name="content" rows="8" cols="40" placeholder="¿Qué tal esa pesca?"></textarea>
+                      <textarea class="form-control" name="content" rows="8" cols="40" placeholder="¿Qué tal esa pesca?"><?php if(isset($content)) echo $content;?></textarea>
 
                       <?php if ( isset($errores['content']) ) : ?>
                         <p class="text-danger"><?=$errores['content']?></p>
@@ -91,12 +91,6 @@
 
                         <a href="viewPublishing?id=<?=$publishing['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
                         <br>
-                        <strong>Comentar</strong>
-                        <form class="" action="" method="POST" style="display: inline-block">
-                          <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
-                          <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></button>
-                        </form>
-
                         <strong>Lo pesco</strong>
                         <form class="" action="" method="POST" style="display: inline-block">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">

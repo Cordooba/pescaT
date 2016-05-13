@@ -106,4 +106,52 @@
 
     </div>
 
+    <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+
+      <div class="panel-heading text-center"><h2>Mis Publicaciones</h2></div>
+
+        <?php if (!empty($publishingList)) : ?>
+
+        <div class="panel-body">
+
+          <table class="table table-striped">
+
+          <?php foreach ($publishingList as $publishing) : ?>
+
+            <tr class="text-center">
+
+              <td>
+
+                <textarea class="" name="" rows="4" cols="90" style="box-sizing: border-box" disabled><?=$publishing['content']?></textarea>
+
+                <p>
+
+                  <strong>Fecha de Creación : </strong><?=$publishing['created_at']?>
+
+                </p>
+
+              </td>
+
+            </tr>
+
+          <?php endforeach ; ?>
+
+          </table>
+
+        </div>
+
+        <?php else: ?>
+
+          <h3 class="text-center">No tienes publicaciones...</h3>
+
+        <?php endif; ?>
+
+    </div>
+
+  </div>
+
+</div>
+
 </div>

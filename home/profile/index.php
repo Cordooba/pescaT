@@ -6,6 +6,27 @@
 
   session_start();
 
+  try {
+
+    $sql = "SELECT * FROM publishing WHERE idUsser = :idUsser AND deleted_at IS NULL";
+		$ps = $pdo -> prepare($sql);
+    $ps -> bindValue(':idUsser', $_SESSION['id']);
+		$ps -> execute();
+
+  } catch (PDOException $e) {
+
+    exit();
+
+  }
+
+  while ($row = $ps -> fetch(PDO::FETCH_ASSOC) ) {
+
+    $publishingList [] = $row;
+
+  }
+
+
+
   if( isset($_GET['logoutUsser']) ){
 
     unset($_SESSION['id']);

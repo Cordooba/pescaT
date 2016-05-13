@@ -94,7 +94,7 @@
 
       try {
 
-        $sql = 'SELECT * FROM ussers WHERE email=:email AND pass=:pass AND deleted_at IS NULL';
+        $sql = 'SELECT * FROM ussers WHERE email=:email AND pass=:pass AND deleted_at IS NULL ';
 
         $ps = $pdo->prepare($sql);
 
