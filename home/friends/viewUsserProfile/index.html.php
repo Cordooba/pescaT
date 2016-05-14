@@ -7,10 +7,10 @@
 
   if( !isset($_SESSION['id']) && !isset($_SESSION['name']) && !isset($_SESSION['subname']) && !isset($_SESSION['email']) && !isset($_SESSION['bday']) && !isset($_SESSION['sex']) && !isset($_SESSION['locality']) && !isset($_SESSION['typeFishing']) ){
 
-        header("Location: ".$base_url);
-        exit();
+      header("Location: ".$base_url);
+      exit();
 
-    }
+  }
 
 ?>
 
@@ -95,5 +95,51 @@
         </div>
 
     </div>
+
+    <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+
+      <div class="panel-heading text-center"><h2>Publicaciones</h2></div>
+
+        <?php if (!empty($publishingsUsser)) : ?>
+
+        <div class="panel-body">
+
+          <table class="table table-striped">
+
+          <?php foreach ($publishingsUsser as $publishing) : ?>
+
+            <tr class="text-center">
+
+              <td>
+
+                <textarea class="" name="" rows="4" cols="90" style="box-sizing: border-box" disabled><?=$publishing['content']?></textarea>
+
+                <p>
+
+                  <strong>Fecha de Creación : </strong><?=$publishing['created_at']?>
+
+                </p>
+
+              </td>
+
+            </tr>
+
+          <?php endforeach ; ?>
+
+          </table>
+
+        </div>
+
+        <?php else: ?>
+
+          <h3 class="text-center">No existen publicaciones...</h3>
+
+        <?php endif; ?>
+
+    </div>
+
+  </div>
 
 </div>

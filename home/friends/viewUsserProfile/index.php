@@ -28,6 +28,28 @@
 
   }
 
+  try{
+
+    $sql = 'SELECT * FROM publishing WHERE idUsser = :idUsser';
+
+    $ps = $pdo->prepare($sql);
+
+    $ps->bindValue(':idUsser', $idUsser);
+
+    $ps->execute();
+
+  }catch(PDOException $e) {
+
+  die("No se ha podido extraer información de la base de datos:". $e->getMessage());
+
+  }
+
+  while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
+
+    $publishingsUsser[] = $row;
+
+  }
+
   session_start();
 
   if( isset($_GET['logoutUsser']) ){
