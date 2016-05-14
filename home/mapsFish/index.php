@@ -8,7 +8,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM locationmaps WHERE deleted_at IS NULL';
+    $sql = 'SELECT * FROM fishmaps WHERE deleted_at IS NULL';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 
@@ -20,7 +20,7 @@
 
   while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
 
-    $locations[] = $row;
+    $fishes[] = $row;
 
   }
 

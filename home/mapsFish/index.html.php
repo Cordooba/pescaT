@@ -30,11 +30,11 @@
 
     <?php
 
-      if ( !empty($locations) ) {
+      if ( !empty($fishes) ) {
 
-        foreach ($locations as $local) {
+        foreach ($fishes as $fish) {
 
-          $place = "var myLatLng".$local['id']." = { lat: ".$local['latitud'].", lng:".$local['longitud']."}; \n  ";
+          $place = "var myLatLng".$fish['id']." = { lat: ".$fish['latitud'].", lng:".$fish['longitud']."}; \n  ";
           echo $place;
 
         }
@@ -58,12 +58,12 @@
 
       $contentString = "";
 
-      foreach ($locations as $local) {
+      foreach ($fishes as $fish) {
 
-        $contentString .= "var contentString".$local['id'].
+        $contentString .= "var contentString".$fish['id'].
           " = \"<div id='content'><div id='siteNotice'></div><h1 id='firstHeading' class='firstHeading'>".
-          $local['location']."</h1><div id='bodyContent'><p><b>".
-          $local['created_at'].
+          $fish['fish']."</h1><div id='bodyContent'><p><b>".
+          $fish['created_at'].
           "</b>.</p></div></div>\";\n";
 
       }
@@ -72,10 +72,10 @@
 
       $infoWindow = "\n\n";
 
-      foreach ($locations as $local) {
+      foreach ($fishes as $fish) {
 
-        $infoWindow .= " var infowindow".$local['id'].
-        " = new google.maps.InfoWindow({\ncontent: contentString".$local['id']."});";
+        $infoWindow .= " var infowindow".$fish['id'].
+        " = new google.maps.InfoWindow({\ncontent: contentString".$fish['id']."});";
 
       }
 
@@ -83,12 +83,12 @@
 
       $markers = "\n\n";
 
-      $icon = "'http://maps.google.com/mapfiles/ms/icons/red-dot.png'";
+      $icon = "'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'";
 
-      foreach ($locations as $local) {
+      foreach ($fishes as $fish) {
 
-        $markers .= "var marker".$local['id'].
-          " = new google.maps.Marker({\nposition: myLatLng".$local['id'].",\nicon: ".$icon.",\nmap: map,\ntitle: '".$local['location']."'});";
+        $markers .= "var marker".$fish['id'].
+          " = new google.maps.Marker({\nposition: myLatLng".$fish['id'].",\nicon: ".$icon.",\nmap: map,\ntitle: '".$fish['fish']."'});";
 
       }
 
@@ -96,10 +96,10 @@
 
       $markerListeners = "";
 
-      foreach ($locations as $local) {
+      foreach ($fishes as $fish) {
 
-        $markerListeners .= "marker".$local['id'].".addListener('click', function() {
-          infowindow".$local['id'].".open(map, marker".$local['id'].");\n});";
+        $markerListeners .= "marker".$fish['id'].".addListener('click', function() {
+          infowindow".$fish['id'].".open(map, marker".$fish['id'].");\n});";
       }
 
       echo $markerListeners;

@@ -37,6 +37,8 @@
 
                     <li><a href="../../../home/maps" title="Ubicaciones"><i class="fa fa-map-o fa-3x" aria-hidden="true"></i></a></li>
 
+                    <li><a href="../../../home/mapsFish" title="Peces"><i class="fa fa-map fa-3x" aria-hidden="true"></i></a></li>
+
                   </ul>
 
                   <ul class="nav navbar-nav navbar-right">
