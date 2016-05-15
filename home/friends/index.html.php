@@ -64,6 +64,8 @@
 
                 <td>
 
+                  <a href="sendMessage?id=<?=$usser['id']?>" style="margin-right: 10px"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+
                   <a href="viewUsserProfile?id=<?=$usser['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
 
                   <form class="" action="?addFriend" method="post" style="display: inline-block">
@@ -72,8 +74,6 @@
                     <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
 
                   </form>
-
-
 
                 </td>
 
