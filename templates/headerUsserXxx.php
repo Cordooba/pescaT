@@ -25,7 +25,7 @@
 
                     <li><a href="" title="Viento"><i class="fa fa-flag-o fa-3x" aria-hidden="true"></i></a></li>
 
-                    <li><a href="" title="Mareas"><i class="fa fa-anchor fa-3x" aria-hidden="true"></i></a></li>
+                    <li><a href="../../home/tide" title="Mareas"><i class="fa fa-anchor fa-3x" aria-hidden="true"></i></a></li>
 
                     <li><a href="../../home/moon" title="Transito lunar"><i class="fa fa-moon-o fa-3x" aria-hidden="true"></i></a></li>
 

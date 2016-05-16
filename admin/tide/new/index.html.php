@@ -20,11 +20,23 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center"><h1>Añadir un T . Lunar</h1></div>
+      <div class="panel-heading text-center"><h1>Añadir una Marea</h1></div>
 
         <div class="panel-body">
 
-          <form class="form-horizontal" role="form" method="POST" action="?addMoon">
+          <form class="form-horizontal" role="form" method="POST" action="?addTide">
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Mar / Océano</label>
+
+                <div class="col-md-4">
+                  <select class="form-control" name="sea">
+                    <option value="Mar Mediterráneo">Mar Mediterráneo</option>
+                    <option value="Océano Atlántico">Océano Atlántico</option>
+                  </select>
+
+                </div>
+            </div>
 
             <div class="form-group">
                 <label class="col-md-4 control-label">Día</label>
@@ -102,15 +114,31 @@
             </div>
 
             <div class="form-group">
-                <label class="col-md-4 control-label">Fase Lunar</label>
+                <label class="col-md-4 control-label">Hora</label>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="hour" value="00h00">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Estado</label>
 
                 <div class="col-md-4">
                   <select class="form-control" name="status">
-                    <option value="Luna Llena">Luna Llena</option>
-                    <option value="Luna Nueva">Luna Nueva</option>
-                    <option value="Cuarto Creciente">Cuarto Creciente</option>
-                    <option value="Cuarto Menguante">Cuarto Menguante</option>
+                    <option value="BM">BM</option>
+                    <option value="PM">PM</option>
                   </select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Altura</label>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="high" value="0.00m">
 
                 </div>
             </div>

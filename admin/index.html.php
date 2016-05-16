@@ -120,6 +120,16 @@
 
               </tr>
 
+              <tr>
+
+                <td class="text-center">
+
+                  <a href="tide"><i class="fa fa-anchor" aria-hidden="true"></i>   Administración de Mareas</a>
+
+                </td>
+
+              </tr>
+
             </tbody>
 
           </table>

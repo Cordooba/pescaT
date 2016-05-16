@@ -37,6 +37,8 @@
 
                   <li><a href="../../../../admin/moon" title="T.Lunar"><i class="fa fa-moon-o fa-3x" aria-hidden="true"></i></a></li>
 
+                  <li><a href="../../../../admin/tide" title="Mareas"><i class="fa fa-anchor fa-3x" aria-hidden="true"></i></a></li>
+
               </ul>
 
               <ul class="nav navbar-nav navbar-right">

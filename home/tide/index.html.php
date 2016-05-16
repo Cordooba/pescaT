@@ -21,19 +21,18 @@
 
             <div class="panel panel-default">
 
-                <div class="panel-heading text-center"><h1><strong>T . Lunar</strong></h1></div>
+                <div class="panel-heading text-center"><h1><strong>Mareas</strong></h1></div>
 
                 <div class="panel-body">
 
 
-                  <form class="form-horizontal" role="form" method="POST" action="?selectMonthMoon">
+                  <form class="form-horizontal" role="form" method="POST" action="?selectMonthTide">
 
                       <div class="form-group">
                           <label class="col-md-4 control-label">Mes</label>
 
                           <div class="col-md-5">
                             <select class="form-control" name="month">
-                              <option value="Marzo">Marzo</option>
                               <option value="Abril">Abril</option>
                               <option value="Mayo">Mayo</option>
                               <option value="Junio">Junio</option>
@@ -43,6 +42,18 @@
                               <option value="Octubre">Octubre</option>
                               <option value="Noviembre">Noviembre</option>
                               <option value="Diciembre">Diciembre</option>
+                            </select>
+
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-4 control-label">Mar / Océano</label>
+
+                          <div class="col-md-5">
+                            <select class="form-control" name="sea">
+                              <option value="Mar Mediterráneo">Mar Mediterráneo</option>
+                              <option value="Océano Atlántico">Océano Atlántico</option>
                             </select>
 
                           </div>

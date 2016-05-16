@@ -483,4 +483,186 @@ try{
 
 }
 
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '01', 'Mayo', '2016', '06h01', 'BM', '1.35m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '01', 'Mayo', '2016', '12h29', 'PM', '3.20m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '01', 'Mayo', '2016', '18h39', 'BM', '1.45m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '02', 'Mayo', '2016', '00h55', 'PM', '3.45m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '02', 'Mayo', '2016', '07h16', 'BM', '1.15m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '02', 'Mayo', '2016', '13h43', 'PM', '3.40m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '02', 'Mayo', '2016', '19h48', 'BM', '1.20m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '03', 'Mayo', '2016', '02h04', 'PM', '3.65m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Océano Atlántico', '03', 'Agosto', '2016', '05h38', 'PM', '4.05m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Mar Mediterráneo', '01', 'Mayo', '2016', '05h20', 'BM', '0.35m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Mar Mediterráneo', '01', 'Mayo', '2016', '12h08', 'PM', '0.55m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Mar Mediterráneo', '01', 'Mayo', '2016', '18h00', 'BM', '0.25m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Mar Mediterráneo', '10', 'Mayo', '2016', '00h25', 'BM', '0.20m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "INSERT INTO tide (sea, day, month, year, hour, status, high) VALUES ('Mar Mediterráneo', '03', 'Agosto', '2016', '00h25', 'BM', '1.20m');";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'ussers' : ". $e->getMessage());
+
+}
+
 ?>

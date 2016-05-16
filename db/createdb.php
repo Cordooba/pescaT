@@ -248,4 +248,27 @@ try{
 
 }
 
+try{
+
+	$sql = "CREATE TABLE IF NOT EXISTS tide (
+		id 			       INT AUTO_INCREMENT PRIMARY KEY,
+		sea            ENUM('Mar Mediterráneo','Océano Atlántico') NOT NULL,
+		day					 	 VARCHAR(2) NOT NULL,
+		month      		 VARCHAR(12),
+		year      		 VARCHAR(4) NOT NULL,
+		hour           VARCHAR(5) NOT NULL,
+		status				 ENUM('BM','PM') NOT NULL,
+		high 					 VARCHAR(5) NOT NULL,
+		created_at	   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'fishMaps' : ". $e->getMessage());
+
+}
+
 ?>
