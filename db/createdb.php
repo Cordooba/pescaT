@@ -92,7 +92,7 @@ try{
 						ON DELETE SET NULL,
 		FOREIGN KEY (idUsserAdd) REFERENCES ussers (id)
 						ON UPDATE CASCADE
-						ON DELETE SET NULL		
+						ON DELETE SET NULL
 
 	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
 
@@ -225,6 +225,26 @@ try{
 }catch(PDOException $e){
 
 		die("No se ha podido crear la tabla 'messages' : ". $e->getMessage());
+
+}
+
+try{
+
+	$sql = "CREATE TABLE IF NOT EXISTS moon (
+		id 			       INT AUTO_INCREMENT PRIMARY KEY,
+		day					 	 VARCHAR(2) NOT NULL,
+		month      		 VARCHAR(12),
+		year      		 VARCHAR(4) NOT NULL,
+		status				 VARCHAR(25) NOT NULL,
+		created_at	   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+	) DEFAULT CHARACTER SET UTF8 ENGINE=InnoDB";
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec($sql);
+
+}catch(PDOException $e){
+
+		die("No se ha podido crear la tabla 'fishMaps' : ". $e->getMessage());
 
 }
 

@@ -27,7 +27,7 @@
 
                     <li><a href="" title="Mareas"><i class="fa fa-anchor fa-3x" aria-hidden="true"></i></a></li>
 
-                    <li><a href="" title="Transito lunar"><i class="fa fa-moon-o fa-3x" aria-hidden="true"></i></a></li>
+                    <li><a href="../../../../home/moon" title="Transito lunar"><i class="fa fa-moon-o fa-3x" aria-hidden="true"></i></a></li>
 
                     <li><a href="../../../../home/profile" title="Perfil"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a></li>
 

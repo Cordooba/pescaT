@@ -25,8 +25,6 @@
 
   }
 
-
-
   if( isset($_GET['logoutUsser']) ){
 
     unset($_SESSION['id']);
