@@ -131,12 +131,14 @@
         $sex = $usser['sex'];
         $locality = $usser['locality'];
         $typeFishing = $usser['typeFishing'];
+        $pass = $usser['pass'];
 
 
         $_SESSION['id'] = $id;
         $_SESSION['name'] = $name;
         $_SESSION['subname'] = $subname;
         $_SESSION['email'] = $email;
+        $_SESSION['pass'] = $pass;
         $_SESSION['bday'] = $bday;
         $_SESSION['sex'] = $sex;
         $_SESSION['locality'] = $locality;

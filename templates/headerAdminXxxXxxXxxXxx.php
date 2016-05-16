@@ -35,6 +35,8 @@
 
                   <li><a href="../../../../../admin/fishes" title="Peces"><i class="fa fa-map-marker fa-3x" aria-hidden="true"></i></a></li>
 
+                  <li><a href="../../../../../admin/moon" title="T.Lunar"><i class="fa fa-moon-o fa-3x" aria-hidden="true"></i></a></li>
+
               </ul>
 
               <ul class="nav navbar-nav navbar-right">

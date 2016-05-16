@@ -33,7 +33,9 @@
 
                   <li><a href="../../admin/locations" title="Ubicaciones"><i class="fa fa-map fa-3x" aria-hidden="true"></i></a></li>
 
-                    <li><a href="../../admin/fishes" title="Peces"><i class="fa fa-map-marker fa-3x" aria-hidden="true"></i></a></li>
+                  <li><a href="../../admin/fishes" title="Peces"><i class="fa fa-map-marker fa-3x" aria-hidden="true"></i></a></li>
+
+                  <li><a href="../../admin/moon" title="T.Lunar"><i class="fa fa-moon-o fa-3x" aria-hidden="true"></i></a></li>
 
               </ul>
 

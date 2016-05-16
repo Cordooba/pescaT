@@ -77,6 +77,7 @@
       $_SESSION['name'] = $name;
       $_SESSION['subname'] = $subname;
       $_SESSION['email'] = $email;
+      $_SESSION['pass'];
       $_SESSION['bday'] = $bday;
       $_SESSION['sex'] = $sex;
       $_SESSION['locality'] = $locality;
@@ -97,6 +98,7 @@
     unset($_SESSION['name']);
     unset($_SESSION['subname']);
     unset($_SESSION['email']);
+    unset($_SESSION['pass']);
     unset($_SESSION['bday']);
     unset($_SESSION['sex']);
     unset($_SESSION['locality']);

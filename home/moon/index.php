@@ -41,6 +41,7 @@
     unset($_SESSION['name']);
     unset($_SESSION['subname']);
     unset($_SESSION['email']);
+    unset($_SESSION['pass']);
     unset($_SESSION['bday']);
     unset($_SESSION['sex']);
     unset($_SESSION['locality']);

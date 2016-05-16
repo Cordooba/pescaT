@@ -7,7 +7,7 @@
         header("Location: admin");
         exit();
 
-    }elseif ( isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['subname']) && isset($_SESSION['email']) && isset($_SESSION['bday']) && isset($_SESSION['sex']) && isset($_SESSION['locality']) && isset($_SESSION['typeFishing']) ) {
+    }elseif ( isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['subname']) && isset($_SESSION['email']) && isset($_SESSION['pass']) && isset($_SESSION['bday']) && isset($_SESSION['sex']) && isset($_SESSION['locality']) && isset($_SESSION['typeFishing']) ) {
 
       header("Location: home");
       exit();

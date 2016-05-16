@@ -5,7 +5,7 @@
 
   global $base_url;
 
-  if( !isset($_SESSION['id']) && !isset($_SESSION['name']) && !isset($_SESSION['subname']) && !isset($_SESSION['email']) && !isset($_SESSION['bday']) && !isset($_SESSION['sex']) && !isset($_SESSION['locality']) && !isset($_SESSION['typeFishing']) ){
+  if( !isset($_SESSION['id']) && !isset($_SESSION['name']) && !isset($_SESSION['subname']) && !isset($_SESSION['email']) && !isset($_SESSION['pass']) && !isset($_SESSION['bday']) && !isset($_SESSION['sex']) && !isset($_SESSION['locality']) && !isset($_SESSION['typeFishing']) ){
 
         header("Location: ".$base_url);
         exit();
@@ -88,7 +88,17 @@
 
                           <td colspan="2">
 
-                            <a href="edit?id=<?=$_SESSION['id']?>"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
+                            <p>
+
+                              <a href="edit?id=<?=$_SESSION['id']?>">Editar <i class="fa fa-wrench fa-2x" aria-hidden="true"></i></a>
+
+                            </p>
+
+                            <p>
+
+                              <a href="changePass?id=<?=$_SESSION['id']?>">Cambiar contraseña <i class="fa fa-user-secret fa-2x" aria-hidden="true"></i></a>
+
+                            </p>
 
                           </td>
 
