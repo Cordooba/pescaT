@@ -120,6 +120,20 @@
 
           <?php foreach ($publishingList as $publishing) : ?>
 
+            <thead>
+
+              <tr>
+
+                <th class="text-center">
+
+                  <h3><?=$publishing['title']?></h3>
+
+                </th>
+
+              </tr>
+
+            </thead>
+
             <tr class="text-center">
 
               <td>
@@ -131,6 +145,8 @@
                   <strong>Fecha de Creación : </strong><?=$publishing['created_at']?>
 
                 </p>
+
+                <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
 
               </td>
 

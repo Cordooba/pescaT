@@ -122,6 +122,10 @@
 
                 </p>
 
+                <p>
+                  <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
+                </p>
+
               </td>
 
             </tr>

@@ -22,7 +22,7 @@
 
             <div class="panel panel-default">
 
-                <div class="panel-heading text-center"><h1><strong>Mensajes</strong></h1></div>
+                <div class="panel-heading text-center"><h1><strong>Mis Mensajes</strong></h1></div>
 
                 <div class="panel-body">
 
