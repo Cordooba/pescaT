@@ -30,7 +30,7 @@
 
   try{
 
-    $sql = 'SELECT comments.id, comments.deleted_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NOT NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY comments.id';
+    $sql = 'SELECT comments.id, comments.deleted_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NOT NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY comments.deleted_at DESC';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

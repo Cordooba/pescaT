@@ -34,7 +34,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM messages WHERE idUsserTo = :id AND deleted_at IS NOT NULL';
+    $sql = 'SELECT * FROM messages WHERE idUsserTo = :id AND deleted_at IS NOT NULL ORDER BY deleted_at DESC';
     $ps = $pdo->prepare($sql);
     $ps->bindValue(':id', $_SESSION['userId']);
     $ps->execute();

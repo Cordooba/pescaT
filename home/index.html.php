@@ -92,7 +92,7 @@
                         <a href="viewPublishing?id=<?=$publishing['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
                         <br>
                         <strong>Lo pesco</strong>
-                        <form class="" action="" method="POST" style="display: inline-block">
+                        <form class="" action="?addFavorite" method="POST" style="display: inline-block">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button>
                         </form>

@@ -30,7 +30,7 @@
 
   try{
 
-    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN ussers ON favorites.idUsser = ussers.id JOIN publishing ON favorites.idPublishing = publishing.id WHERE favorites.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY favorites.id';
+    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN ussers ON favorites.idUsser = ussers.id JOIN publishing ON favorites.idPublishing = publishing.id WHERE favorites.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY favorites.created_at DESC';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

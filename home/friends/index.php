@@ -23,6 +23,9 @@
 
     }catch (PDOException $e) {
 
+      header('Location: ..');
+      exit();
+
     }
 
   }

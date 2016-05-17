@@ -51,6 +51,12 @@
 
   }
 
+  if ( isset($_GET['addFavorite']) ) {
+
+    
+
+  }
+
   try{
 
     $sql = 'SELECT *, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.id = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY publishing.created_at DESC';

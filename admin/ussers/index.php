@@ -30,7 +30,7 @@
 
   try{
 
-    $sql = 'SELECT * FROM ussers WHERE deleted_at IS NULL';
+    $sql = 'SELECT * FROM ussers WHERE deleted_at IS NULL ORDER BY created_at DESC';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

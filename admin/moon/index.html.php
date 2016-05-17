@@ -32,9 +32,6 @@
 
                   <tr>
                     <th class="text-center">
-                      Id
-                    </th>
-                    <th class="text-center">
                       Día
                     </th>
                     <th class="text-center">
@@ -58,7 +55,6 @@
                     <?php foreach ( $moonList as $moon ) : ?>
                       <tr class="text-center">
 
-                        <td><?=$moon['id']?></td>
                         <td><?=$moon['day']?></td>
                         <td><?=$moon['month']?></td>
                         <td><?=$moon['year']?></td>

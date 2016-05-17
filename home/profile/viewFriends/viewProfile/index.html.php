@@ -1,16 +1,16 @@
 <?php
 
-  require_once '../../templates/headerUsserXxx.php';
-  require_once '../../db/connectdb.php';
+  require_once '../../../../templates/headerUsserXxxXxxXxx.php';
+  require_once '../../../../db/connectdb.php';
 
   global $base_url;
 
   if( !isset($_SESSION['id']) && !isset($_SESSION['name']) && !isset($_SESSION['subname']) && !isset($_SESSION['email']) && !isset($_SESSION['pass']) && !isset($_SESSION['bday']) && !isset($_SESSION['sex']) && !isset($_SESSION['locality']) && !isset($_SESSION['typeFishing']) ){
 
-        header("Location: ".$base_url);
-        exit();
+      header("Location: ".$base_url);
+      exit();
 
-    }
+  }
 
 ?>
 
@@ -35,7 +35,7 @@
                             <strong>Nombre</strong>
                           </td>
                           <td>
-                            <?=$_SESSION['name']?> <?=$_SESSION['subname']?>
+                            <?=$usser['name']?> <?=$usser['subname']?>
                           </td>
                         </tr>
 
@@ -44,7 +44,7 @@
                             <strong>Correo electrónico</strong>
                           </td>
                           <td>
-                            <?=$_SESSION['email']?>
+                            <?=$usser['email']?>
                           </td>
                         </tr>
 
@@ -53,7 +53,7 @@
                             <strong>Fecha de nacimiento</strong>
                           </td>
                           <td>
-                            <?=$_SESSION['bday']?>
+                            <?=$usser['bday']?>
                           </td>
                         </tr>
 
@@ -62,7 +62,7 @@
                             <strong>Localidad</strong>
                           </td>
                           <td>
-                            <?=$_SESSION['locality']?>
+                            <?=$usser['locality']?>
                           </td>
                         </tr>
 
@@ -71,7 +71,7 @@
                             <strong>Sexo</strong>
                           </td>
                           <td>
-                            <?=$_SESSION['sex']?>
+                            <?=$usser['sex']?>
                           </td>
                         </tr>
 
@@ -80,34 +80,8 @@
                             <strong>Tipo de pesca</strong>
                           </td>
                           <td>
-                            <?=$_SESSION['typeFishing']?>
+                            <?=$usser['typeFishing']?>
                           </td>
-                        </tr>
-
-                        <tr class="text-center">
-
-                          <td colspan="2">
-
-                            <p>
-
-                              <a href="edit?id=<?=$_SESSION['id']?>">Editar <i class="fa fa-wrench fa-2x" aria-hidden="true"></i></a>
-
-                            </p>
-
-                            <p>
-
-                              <a href="changePass?id=<?=$_SESSION['id']?>">Cambiar mi contraseña <i class="fa fa-user-secret fa-2x" aria-hidden="true"></i></a>
-
-                            </p>
-
-                            <p>
-
-                              <a href="viewFriends">Mis amigos <i class="fa fa-users fa-2x" aria-hidden="true"></i></a>
-
-                            </p>
-
-                          </td>
-
                         </tr>
 
                       </tbody>
@@ -126,29 +100,15 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center"><h2>Mis Publicaciones</h2></div>
+      <div class="panel-heading text-center"><h2>Publicaciones</h2></div>
 
-        <?php if (!empty($publishingList)) : ?>
+        <?php if (!empty($publishingsUsser)) : ?>
 
         <div class="panel-body">
 
           <table class="table table-striped">
 
-          <?php foreach ($publishingList as $publishing) : ?>
-
-            <thead>
-
-              <tr>
-
-                <th class="text-center">
-
-                  <h3><?=$publishing['title']?></h3>
-
-                </th>
-
-              </tr>
-
-            </thead>
+          <?php foreach ($publishingsUsser as $publishing) : ?>
 
             <tr class="text-center">
 
@@ -162,7 +122,9 @@
 
                 </p>
 
-                <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
+                <p>
+                  <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
+                </p>
 
               </td>
 
@@ -176,14 +138,12 @@
 
         <?php else: ?>
 
-          <h3 class="text-center">No tienes publicaciones...</h3>
+          <h3 class="text-center">No existen publicaciones...</h3>
 
         <?php endif; ?>
 
     </div>
 
   </div>
-
-</div>
 
 </div>
