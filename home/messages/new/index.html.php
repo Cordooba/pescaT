@@ -62,21 +62,29 @@
                     <select class="form-control" name="idUsser">
 
                       <?php foreach ( $ussers as $usser ) : ?>
-                      <option value="<?=$usser['id']?>"><?=$usser['name']?></option>
+                      <option value="<?=$usser['id']?>"><?=$usser['name']?> <?=$usser['subname']?></option>
                       <?php endforeach ; ?>
                     </select>
 
                   <?php else : ?>
-                    <p class="text-center">No existen usuarios...</p>
+                    <div class="col-md-12" style="margin-top: 8px">
+                      <p class="text-center"><strong>No tienes amigos para enviar un mensaje...</strong></p>
+                    </div>
                   <?php endif ; ?>
                   </div>
               </div>
 
               <div class="form-group">
                   <div class="col-md-6 col-md-offset-5">
+                    <?php if ( isset($ussers) ) : ?>
                       <button type="submit" class="btn btn-primary">
                           Enviar  <i class="fa fa-check fa-2x" aria-hidden="true"></i>
                       </button>
+                    <?php else : ?>
+                      <button type="submit" class="btn btn-primary" disabled>
+                          Enviar  <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                      </button>
+                    <?php endif ; ?>
                   </div>
               </div>
 

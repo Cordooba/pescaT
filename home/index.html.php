@@ -25,7 +25,7 @@
           <form class="form-horizontal" role="form" method="POST" action="?addPublishing">
 
               <div class="form-group">
-                  <label class="col-md-3 control-label">Titulo</label>
+                  <label class="col-md-3 control-label">Titulo :</label>
 
                   <div class="col-md-7">
                       <input type="text" class="form-control" name="title" value="<?php if(isset($title)) echo $title;?>" >
@@ -37,7 +37,7 @@
               </div>
 
               <div class="form-group">
-                  <label class="col-md-3 control-label">Contenido</label>
+                  <label class="col-md-3 control-label">Contenido :</label>
 
                   <div class="col-md-7">
                       <textarea class="form-control" name="content" rows="8" cols="40" placeholder="¿Qué tal esa pesca?"><?php if(isset($content)) echo $content;?></textarea>
@@ -66,7 +66,7 @@
 
     <div class="panel panel-default">
 
-      <div class="panel-heading text-center "><strong>De actualidad...</strong></div>
+      <div class="panel-heading text-center "><h2><strong>De actualidad...</strong></h2></div>
 
         <div class="panel-body">
 
@@ -81,17 +81,17 @@
 
                       <td class="text-center">
 
-                          <input type="hidden" name="id" value="<?=$publishing['id']?>">
-                          <strong><?=$publishing['title']?></strong>
-                          <br / >
-                          <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
-                          <br />
-                          <strong>Fecha :</strong> <?=$publishing['fecha']?>
-                          <br />
+                        <input type="hidden" name="id" value="<?=$publishing['id']?>">
+                        <strong><h3><?=$publishing['title']?></h3></strong>
+                        <textarea rows="10" cols="70" disabled style="display: block-inline"><?=$publishing['content']?></textarea>
+                        <br / >
+                        <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
+                        <br />
+                        <strong>Fecha :</strong> <?=$publishing['fecha']?>
+                        <br />
 
-                        <a href="viewPublishing?id=<?=$publishing['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
-                        <br>
-                        <strong></strong>
+                        <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
+
                         <form class="" action="?addFavorite" method="POST" style="display: inline-block">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                           <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button>

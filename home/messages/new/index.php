@@ -76,9 +76,9 @@
 
       try{
 
-        $sql = 'SELECT * FROM ussers WHERE id != :id AND deleted_at IS NULL';
+        $sql = 'SELECT ussers.id AS id, ussers.name AS name, ussers.subname AS subname FROM usserfriends JOIN ussers ON usserfriends.idUsserAdd = ussers.id WHERE usserfriends.idUsser = :idUsser';
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(':id', $_SESSION['id']);
+        $ps->bindValue(':idUsser', $_SESSION['id']);
         $ps->execute();
 
         }catch(PDOException $e) {

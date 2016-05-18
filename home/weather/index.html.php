@@ -22,12 +22,12 @@
 
         <div class="panel-body">
 
-          <form class="form-group" action="" method="get">
+          <form class="form-horizontal" action="" method="get">
 
             <div class="form-group">
                 <label class="col-md-4 control-label">Provincia</label>
 
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <select class="form-control" name="c">
                     <option value="2520600">Cádiz</option>
                     <option value="3675605">Málaga</option>
@@ -51,7 +51,17 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                    <p class="text-center">
+                      <strong>Fuente :</strong> <a href="http://openweathermap.org">OpenWeather</a>
+                    </p>
+                </div>
+            </div>
+
           </form>
+
+
 
 <?php
 
@@ -61,18 +71,17 @@
 
     $json = json_decode($html, true);
 
-    echo "<br />";
-    echo "<br />";
-    echo "<h3>Ciudad: ".$json['city']['name']." [lat = ".$json['city']['coord']['lat']. ", lon = ".$json['city']['coord']['lon']. " ]</h3>";
-    echo "<b>Estado del cielo: </b>".$json['list'][0]['weather'][0]['main']."<br>";
-    echo "<b>Descripción: </b>".$json['list'][0]['weather'][0]['description']."<br>";
+    echo "<h3 class='text-center'><strong>Ciudad :</strong> ".$json['city']['name']." [lat = ".$json['city']['coord']['lat']. ", lon = ".$json['city']['coord']['lon']. " ]</h3>";
+    echo "<p class='text-center'><strong>Estado del cielo :</strong> ".$json['list'][0]['weather'][0]['main']."</p>";
+    echo "<p class='text-center'><strong>Descripción :</strong> ".$json['list'][0]['weather'][0]['description']."</p>";
     echo "<br>";
-    echo "<b>Temperatura: </b>".$json['list'][0]['main']['temp']." K [Máx: ".$json['list'][0]['main']['temp_max']."K, Mín: ".$json['list'][0]['main']['temp_min']."K]<br>";
-    echo "<b>Presión: </b>".$json['list'][0]['main']['pressure']."<br>";
-    echo "<b>Humedad: </b>".$json['list'][0]['main']['humidity']."<br>";
-    echo "<b>Nivel del Mar: </b>".$json['list'][0]['main']['sea_level']."<br>";
-    echo "<b>Fecha de consulta: </b>".$json['list'][0]['dt_txt']."<br/>";
-    echo "<br>";
+    echo "<p class='text-center'><strong>Temperatura :</strong> ".$json['list'][0]['main']['temp']." K [Máx: ".$json['list'][0]['main']['temp_max']."K, Mín: ".$json['list'][0]['main']['temp_min']."K]</p>";
+    echo "<p class='text-center'><strong>Presión :</strong> ".$json['list'][0]['main']['pressure']."bar</p>";
+    echo "<p class='text-center'><strong>Humedad :</strong> ".$json['list'][0]['main']['humidity']."g/m3</p>";
+    echo "<p class='text-center'><strong>Nivel del Mar :</strong> ".$json['list'][0]['main']['sea_level']."msnm</p>";
+    echo "<p class='text-center'><strong>Fecha de consulta :</strong> ".$json['list'][0]['dt_txt']."</p>";
+
+
 
   }
 

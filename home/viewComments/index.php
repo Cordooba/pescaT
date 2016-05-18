@@ -50,21 +50,6 @@
 
     try{
 
-      $sql = 'SELECT * FROM publishing WHERE id = :idPublishing AND deleted_at IS NULL';
-      $ps = $pdo->prepare($sql);
-      $ps->bindValue(':idPublishing', $idPublishing);
-      $ps->execute();
-
-    }catch(PDOException $e) {
-
-    die("No se ha podido extraer información de la base de datos:". $e->getMessage());
-
-    }
-
-    $publishing = $ps->fetch(PDO::FETCH_ASSOC);
-
-    try{
-
       $sql = 'SELECT comments.content AS content, comments.created_at AS created_at, ussers.name AS name, ussers.subname AS subname FROM comments JOIN ussers ON comments.idUsser = ussers.id WHERE comments.idPublishing = :idPublishing AND comments.deleted_at IS NULL ORDER BY comments.created_at DESC';
       $ps = $pdo->prepare($sql);
       $ps->bindValue(':idPublishing', $idPublishing);
