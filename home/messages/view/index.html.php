@@ -32,7 +32,7 @@
 
                       <td class="text-center">
 
-                        <textarea class="" name="" rows="10" cols="90" style="box-sizing: border-box" disabled><?=$message['content']?>.</textarea>
+                        <textarea class="" name="" rows="10" cols="90" style="box-sizing: border-box;resize: none;" disabled><?=$message['content']?>.</textarea>
 
                       </td>
 

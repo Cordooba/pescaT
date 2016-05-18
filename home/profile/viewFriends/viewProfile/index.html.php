@@ -114,7 +114,7 @@
 
               <td>
 
-                <textarea class="" name="" rows="4" cols="90" style="box-sizing: border-box" disabled><?=$publishing['content']?></textarea>
+                <textarea class="" name="" rows="4" cols="90" style="box-sizing: border-box;resize: none;" disabled><?=$publishing['content']?></textarea>
 
                 <p>
 

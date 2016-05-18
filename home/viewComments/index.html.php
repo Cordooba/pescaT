@@ -16,7 +16,7 @@
 <div class="container">
 
   <div class="col-lg-8 col-md-offset-2">
-    
+
     <div class="panel panel-default">
 
       <div class="panel-heading text-center"><h2>Comentarios</h2></div>
@@ -35,7 +35,7 @@
 
           <div class="form-group">
 
-            <textarea class="" name="content" rows="4" cols="90" style="box-sizing: border-box"></textarea>
+            <textarea class="" name="content" rows="4" cols="90" style="box-sizing: border-box;resize: none;"></textarea>
 
           </div>
 

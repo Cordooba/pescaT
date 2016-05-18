@@ -83,7 +83,7 @@
 
                         <input type="hidden" name="id" value="<?=$publishing['id']?>">
                         <strong><h3><?=$publishing['title']?></h3></strong>
-                        <textarea rows="10" cols="70" disabled style="display: block-inline"><?=$publishing['content']?></textarea>
+                        <textarea rows="10" cols="70" disabled style="display: block-inline;resize: none"><?=$publishing['content']?></textarea>
                         <br / >
                         <strong>Creado por :</strong> <?=$publishing['name']?> - <?=$publishing['email']?>
                         <br />

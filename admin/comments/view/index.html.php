@@ -33,7 +33,7 @@
 
                         <td class="text-center">
 
-                          <textarea name="content" rows="8" cols="80"><?=$comment['content']?></textarea>
+                          <textarea name="content" rows="8" cols="80" style="resize: none;"><?=$comment['content']?></textarea>
 
                         </td>
 

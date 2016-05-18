@@ -114,7 +114,7 @@
 
               <td>
 
-                <textarea class="" name="" rows="4" cols="90" style="box-sizing: border-box" disabled><?=$publishing['content']?></textarea>
+                <textarea class="" name="" rows="4" cols="90" style="box-sizing: border-box;resize: none;" disabled><?=$publishing['content']?></textarea>
 
                 <p>
 
@@ -122,10 +122,9 @@
 
                 </p>
 
-                <p>
-                  <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
-                </p>
-                <br>
+
+                <a href="viewComments?id=<?=$publishing['id']?>"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
+
                 <form class="" action="?addFavorite" method="POST" style="display: inline-block">
                   <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
                   <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button>

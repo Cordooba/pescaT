@@ -34,7 +34,7 @@
 
                       <td class="text-center">
 
-                        <textarea name="content" rows="8" cols="80"><?=$publishing['content']?></textarea>
+                        <textarea name="content" rows="8" cols="80" style="resize: none;"><?=$publishing['content']?></textarea>
 
                       </td>
 

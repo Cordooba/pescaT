@@ -35,7 +35,7 @@
 
                     <td class="text-center">
 
-                      <textarea class="" name="" rows="10" cols="90" style="box-sizing: border-box" disabled><?=$comment['content']?>.</textarea>
+                      <textarea class="" name="" rows="10" cols="90" style="box-sizing: border-box;resize: none;" disabled><?=$comment['content']?>.</textarea>
 
                     </td>
 
