@@ -37,16 +37,14 @@
 
                   <a href="viewProfile?id=<?=$friend['id']?>"><?=$friend['name']?> <?=$friend['subname']?></a>
 
-                </td>
-
-                <td class="text-center">
-
-                  <form class="" action="?deleteFriend" method="post">
+                  <form class="" action="?deleteFriend" method="post" style="display: inline">
 
                     <input type="hidden" name="idUsserAdd" value="<?=$friend['id']?>">
                     <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></button>
 
                   </form>
+
+                  <a href="sendMessage?id=<?=$friend['id']?>"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
 
                 </td>
 

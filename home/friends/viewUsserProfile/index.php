@@ -4,6 +4,8 @@
 
   global $base_url;
 
+  session_start();
+
   $idUsser = $_GET['id'];
 
   if ( is_numeric($idUsser) ) {
@@ -28,6 +30,34 @@
 
   }
 
+  if ( isset($_GET['addFavorite']) ) {
+
+      $idPublishing = htmlspecialchars($_POST['idPublishing'], ENT_QUOTES, 'UTF-8');
+      $idUsser = $_SESSION['id'];
+
+      try {
+
+        $sql = "INSERT INTO favorites (idUsser, idPublishing) VALUES (:idUsser, :idPublishing)";
+
+        $ps = $pdo->prepare($sql);
+
+        $ps->bindValue(':idUsser', $idUsser);
+        $ps->bindValue(':idPublishing', $idPublishing);
+
+        $ps->execute();
+
+      } catch (PDOException $e) {
+
+        header('Location: ..');
+        exit();
+
+      }
+
+      header('Location: ..');
+      exit();
+
+  }
+
   try{
 
     $sql = 'SELECT * FROM publishing WHERE idUsser = :idUsser';
@@ -49,8 +79,6 @@
     $publishingsUsser[] = $row;
 
   }
-
-  session_start();
 
   if( isset($_GET['logoutUsser']) ){
 
