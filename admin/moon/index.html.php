@@ -18,6 +18,26 @@
 
     <div class="col-lg-12">
 
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?statusAsc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Estado Ascendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                </button>
+        </form>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?statusDesc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Estado Descendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                </button>
+        </form>
+
+      </div>
+
       <div class="panel panel-default">
 
         <div class="panel-heading text-center"><h1>Listado de T . Lunar</h1></div>
@@ -52,8 +72,29 @@
 
       					<tbody>
 
-                    <?php foreach ( $moonList as $moon ) : ?>
-                      <tr class="text-center">
+                    <?php foreach ( $moonList as $moon ) :
+
+                      switch ($moon['status']) {
+                        case 'Luna Nueva' :
+                          $colorStatus = 'danger';
+                          break;
+                        case 'Luna Llena' :
+                          $colorStatus = 'warning';
+                          break;
+                        case 'Cuarto Creciente' :
+                          $colorStatus = 'active';
+                          break;
+                        case 'Cuarto Menguante' :
+                          $colorStatus = 'info';
+                          break;
+                        default:
+                          $colorStatus = '';
+                          break;
+                      }
+
+                      ?>
+
+                      <tr class="text-center <?=$colorStatus?>">
 
                         <td><?=$moon['day']?></td>
                         <td><?=$moon['month']?></td>

@@ -18,6 +18,46 @@
 
     <div class="col-lg-12">
 
+        <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+          <form class="form-horizontal" action="?ussersAsc" method="post" class="orderbutton">
+  								<button type="submit" class="btn btn-primary" title="Usuario Ascendente">
+  									<span class="glyphicon glyphicon-sort-by-alphabet"></span>
+  								</button>
+  				</form>
+
+        </div>
+
+        <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+          <form class="form-horizontal" action="?ussersDesc" method="post" class="orderbutton">
+  								<button type="submit" class="btn btn-primary" title="Usuario Descendente">
+  									<span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+  								</button>
+  				</form>
+
+        </div>
+
+        <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+          <form class="form-horizontal" action="?idAsc" method="post" class="orderbutton">
+                  <button type="submit" class="btn btn-primary" title="Id Ascendente">
+                    <span class="glyphicon glyphicon-sort-by-order"></span>
+                  </button>
+          </form>
+
+        </div>
+
+        <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+          <form class="form-horizontal" action="?idDesc" method="post" class="orderbutton">
+                  <button type="submit" class="btn btn-primary" title="Id Ascendente">
+                    <span class="glyphicon glyphicon-sort-by-order-alt"></span>
+                  </button>
+          </form>
+
+        </div>
+
       <div class="panel panel-default">
 
         <div class="panel-heading text-center"><h1>Listado de Publicaciones</h1></div>

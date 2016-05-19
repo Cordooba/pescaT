@@ -44,6 +44,16 @@
 
                 <td class="text-center">
 
+                  <a href="logins"><i class="fa fa-laptop" aria-hidden="true"></i>   Administración de Loggins</a>
+
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td class="text-center">
+
                   <a href="ussers"><i class="fa fa-users" aria-hidden="true"></i>   Administración de Usuarios</a>
 
                 </td>
@@ -131,6 +141,20 @@
               </tr>
 
             </tbody>
+
+            <thead>
+
+              <tr>
+
+                <td class="text-center">
+
+                  <strong>PescaT &copy;</strong>
+
+                </td>
+
+              </tr>
+
+            </thead>
 
           </table>
 

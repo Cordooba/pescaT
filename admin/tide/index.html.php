@@ -18,6 +18,46 @@
 
     <div class="col-lg-12">
 
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?seaAsc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Mar/Océano Ascendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                </button>
+        </form>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?seaDesc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Mar/Océano Descendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                </button>
+        </form>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?statusAsc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Estado Ascendente">
+                  <span class="glyphicon glyphicon-sort-by-attributes"></span>
+                </button>
+        </form>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?statusDesc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Estado Descendente">
+                  <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                </button>
+        </form>
+
+    </div>
+
       <div class="panel panel-default">
 
         <div class="panel-heading text-center"><h1>Listado de Mareas</h1></div>
@@ -61,8 +101,22 @@
 
       					<tbody>
 
-                    <?php foreach ( $tideList as $tide ) : ?>
-                      <tr class="text-center">
+                    <?php foreach ( $tideList as $tide ) :
+
+                        switch ($tide['status']) {
+                          case 'BM' :
+                            $colorStatus = 'active';
+                            break;
+                          case 'PM' : 
+                            $colorStatus = 'warning';
+                            break;
+                          default:
+                            $colorStatus = '';
+                            break;
+
+                        }
+                      ?>
+                      <tr class="text-center <?=$colorStatus?>">
 
                         <td><?=$tide['sea']?></td>
                         <td><?=$tide['day']?></td>

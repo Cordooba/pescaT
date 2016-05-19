@@ -2,40 +2,27 @@
 
   require_once '../../db/connectdb.php';
 
-  if(isset($_GET['statusAsc'])){
+  global $base_url;
 
-    $sql = 'SELECT * FROM moon ORDER BY status ASC';
-
-  }elseif(isset($_GET['statusDesc'])){
-
-    $sql = 'SELECT * FROM moon ORDER BY status DESC';
-
-  }else{
-
-    $sql = 'SELECT * FROM moon';
-
-  }
+  session_start();
 
   try{
 
+    $sql = 'SELECT * FROM logins';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 
   }catch(PDOException $e) {
 
-    die("No se ha podido extraer información de la base de datos:". $e->getMessage());
+  die("No se ha podido extraer información de la base de datos:". $e->getMessage());
 
   }
 
   while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
 
-    $moonList[] = $row;
+    $loggins[] = $row;
 
   }
-
-  global $base_url;
-
-  session_start();
 
   if( isset($_GET['logout']) ){
 

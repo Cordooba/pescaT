@@ -6,6 +6,39 @@
 
   session_start();
 
+  if (isset($_GET['search'])) {
+
+    $toSearch = htmlspecialchars($_POST['search'], ENT_QUOTES, 'UTF-8');
+
+    if (!empty($toSearch)) {
+
+      try{
+
+        $sql = 'SELECT * FROM publishing WHERE content LIKE :content';
+        $ps = $pdo->prepare($sql);
+        $ps -> bindValue(':content', '%'.$toSearch.'%');
+        $ps->execute();
+
+      }catch(PDOException $e) {
+
+        die("No se ha podido extraer información de la base de datos:". $e->getMessage());
+
+      }
+
+      while ($row = $ps->fetch(PDO::FETCH_ASSOC) ) {
+
+        $result[] = $row;
+
+      }
+
+    var_dump($result);
+    exit();  
+
+
+    }
+
+  }
+
   if (isset($_GET['addPublishing'])) {
 
     $title = htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8');

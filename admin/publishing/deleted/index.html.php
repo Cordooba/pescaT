@@ -35,7 +35,7 @@
                   Id
                 </th>
                 <th class="text-center">
-                  Apellidos
+                  Nombre
                 </th>
                 <th class="text-center">
                   Email

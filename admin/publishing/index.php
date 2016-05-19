@@ -28,9 +28,30 @@
 
   }
 
-  try{
+  if (isset($_GET['ussersAsc'])) {
+
+    $sql = 'SELECT *, publishing.id AS idPublishing, publishing.idUsser AS idUsuario, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.idUsser = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY ussers.name ASC';
+
+  }elseif(isset($_GET['ussersDesc'])){
+
+    $sql = 'SELECT *, publishing.id AS idPublishing, publishing.idUsser AS idUsuario, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.idUsser = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY ussers.name DESC';
+
+  }elseif(isset($_GET['idAsc'])){
+
+    $sql = 'SELECT *, publishing.id AS idPublishing, publishing.idUsser AS idUsuario, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.idUsser = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY publishing.id ASC';
+
+  }elseif(isset($_GET['idDesc'])){
+
+    $sql = 'SELECT *, publishing.id AS idPublishing, publishing.idUsser AS idUsuario, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.idUsser = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY publishing.id DESC';
+
+  }else{
 
     $sql = 'SELECT *, publishing.id AS idPublishing, publishing.idUsser AS idUsuario, publishing.created_at AS fecha FROM publishing JOIN ussers ON publishing.idUsser = ussers.id WHERE publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY publishing.created_at DESC';
+
+  }
+
+  try{
+
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

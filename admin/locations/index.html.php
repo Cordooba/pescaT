@@ -19,6 +19,26 @@
 
     <div class="col-lg-12">
 
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?locationAsc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Ubicación Ascendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                </button>
+        </form>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?locationDesc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Ubicación Descendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                </button>
+        </form>
+
+      </div>
+
       <div class="panel panel-default">
 
         <div class="panel-heading text-center"><h1>Listado de Ubicaciones</h1></div>

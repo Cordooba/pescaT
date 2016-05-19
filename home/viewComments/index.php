@@ -6,9 +6,11 @@
 
   global $base_url;
 
+  $idPublishing = $_GET['id'];
+
   if ($_POST) {
 
-    $idPublishing = htmlspecialchars($_POST['idPublishing'], ENT_QUOTES, 'UTF-8');
+    $idPublishing = $_GET['id'];
     $content = htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8');
     $errores = [];
 
@@ -43,8 +45,6 @@
 
   }
 
-
-  $idPublishing = $_GET['id'];
 
   if ( is_numeric($idPublishing) ) {
 

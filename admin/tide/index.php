@@ -2,9 +2,30 @@
 
   require_once '../../db/connectdb.php';
 
-  try{
+  if(isset($_GET['seaAsc'])){
+
+    $sql = 'SELECT * FROM tide ORDER BY sea ASC';
+
+  }elseif(isset($_GET['seaDesc'])){
+
+    $sql = 'SELECT * FROM tide ORDER BY sea DESC';
+
+  }elseif(isset($_GET['statusAsc'])){
+
+    $sql = 'SELECT * FROM tide ORDER BY status ASC';
+
+  }elseif(isset($_GET['statusDesc'])){
+
+    $sql = 'SELECT * FROM tide ORDER BY status DESC';
+
+  }else{
 
     $sql = 'SELECT * FROM tide';
+
+  }
+
+  try{
+
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

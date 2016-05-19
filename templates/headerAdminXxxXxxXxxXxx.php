@@ -21,6 +21,8 @@
 
               <ul class="nav navbar-nav navbar-center">
 
+                  <li><a href="../../../../../admin/logins" title="Loggins"><i class="fa fa-laptop fa-3x" aria-hidden="true"></i></a></li>
+
                   <li><a href="../../../../../admin/ussers" title="Usuarios"><i class="fa fa-users fa-3x" aria-hidden="true"></i></a></li>
 
                   <li><a href="../../../../../admin/publishing" title="Publicaciones"><i class="fa fa-comments-o fa-3x" aria-hidden="true"></i></a></li>

@@ -28,9 +28,22 @@
 
   }
 
-  try{
+  if(isset($_GET['fishAsc'])){
+
+    $sql = 'SELECT * FROM fishmaps WHERE deleted_at IS NULL ORDER BY fish ASC';
+
+  }elseif(isset($_GET['fishDesc'])){
+
+    $sql = 'SELECT * FROM fishmaps WHERE deleted_at IS NULL ORDER BY fish DESC';
+
+  }else{
 
     $sql = 'SELECT * FROM fishmaps WHERE deleted_at IS NULL ORDER BY created_at DESC';
+
+  }
+
+  try{
+
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

@@ -45,7 +45,7 @@
                                 <label class="col-md-6 control-label text-center">Correo electrónico</label>
 
                                     <div class="col-md-6">
-                                      <input type="email" class="form-control" name="emailLogin">
+                                      <input type="email" class="form-control" name="emailLogin" required>
                                     </div>
 
                             </div>
@@ -54,7 +54,7 @@
                                 <label class="col-md-6 control-label">Contraseña</label>
 
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control" name="passLogin">
+                                    <input type="password" class="form-control" name="passLogin" required>
 
                                 </div>
                             </div>

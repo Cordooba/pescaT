@@ -28,9 +28,30 @@
 
   }
 
-  try{
+  if (isset($_GET['ussersAsc'])) {
+
+    $sql = 'SELECT comments.id, comments.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY ussers.name ASC';
+
+  }elseif(isset($_GET['ussersDesc'])){
+
+    $sql = 'SELECT comments.id, comments.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY ussers.name DESC';
+
+  }elseif(isset($_GET['publishingAsc'])){
+
+    $sql = 'SELECT comments.id, comments.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY publishing.title ASC';
+
+  }elseif(isset($_GET['publishingDesc'])){
+
+    $sql = 'SELECT comments.id, comments.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY publishing.title DESC';
+
+  }else{
 
     $sql = 'SELECT comments.id, comments.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM comments JOIN ussers ON comments.idUsser = ussers.id JOIN publishing ON comments.idPublishing = publishing.id WHERE comments.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY comments.created_at DESC';
+
+  }
+
+  try{
+
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

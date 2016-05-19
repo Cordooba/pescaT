@@ -16,6 +16,22 @@
 
 <div class="container">
 
+  <div class="col-lg-8 col-md-offset-5" style="margin-bottom: 10px">
+
+    <form class="form-inline" action="?search" method="post">
+
+      <div class="form-group">
+
+        <input type="text" class="form-control" placeholder="Buscar..." name="search">
+
+      </div>
+
+      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+
+    </form>
+
+  </div>
+
   <div class="col-lg-8 col-md-offset-2">
 
     <div class="panel panel-default">
@@ -28,7 +44,7 @@
                   <label class="col-md-3 control-label">Titulo :</label>
 
                   <div class="col-md-7">
-                      <input type="text" class="form-control" name="title" value="<?php if(isset($title)) echo $title;?>" >
+                      <input type="text" class="form-control" name="title" value="<?php if(isset($title)) echo $title;?>" placeholder="Título de la captura...">
 
                       <?php if ( isset($errores['title']) ) : ?>
                         <p class="text-danger"><?=$errores['title']?></p>

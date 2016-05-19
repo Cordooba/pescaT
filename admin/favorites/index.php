@@ -28,9 +28,30 @@
 
   }
 
+  if (isset($_GET['ussersAsc'])) {
+
+    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN publishing ON favorites.idPublishing=publishing.id JOIN ussers ON favorites.idUsser=ussers.id WHERE favorites.deleted_at IS NULL AND ussers.deleted_at IS NULL AND publishing.created_at IS NOT NULL ORDER BY ussers.name ASC';
+
+  }elseif(isset($_GET['ussersDesc'])){
+
+    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN publishing ON favorites.idPublishing=publishing.id JOIN ussers ON favorites.idUsser=ussers.id WHERE favorites.deleted_at IS NULL AND ussers.deleted_at IS NULL AND publishing.created_at IS NOT NULL ORDER BY ussers.name DESC';
+
+  }elseif(isset($_GET['publishingAsc'])){
+
+    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN publishing ON favorites.idPublishing=publishing.id JOIN ussers ON favorites.idUsser=ussers.id WHERE favorites.deleted_at IS NULL AND ussers.deleted_at IS NULL AND publishing.created_at IS NOT NULL ORDER BY publishing.title ASC';
+
+  }elseif(isset($_GET['publishingDesc'])){
+
+    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN publishing ON favorites.idPublishing=publishing.id JOIN ussers ON favorites.idUsser=ussers.id WHERE favorites.deleted_at IS NULL AND ussers.deleted_at IS NULL AND publishing.created_at IS NOT NULL ORDER BY publishing.title DESC';
+
+  }else{
+
+    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN publishing ON favorites.idPublishing=publishing.id JOIN ussers ON favorites.idUsser=ussers.id WHERE favorites.deleted_at IS NULL AND ussers.deleted_at IS NULL AND publishing.created_at IS NOT NULL ORDER BY favorites.created_at DESC';
+
+  }
+
   try{
 
-    $sql = 'SELECT favorites.id, favorites.created_at AS fecha, ussers.name, ussers.email, publishing.title FROM favorites JOIN ussers ON favorites.idUsser = ussers.id JOIN publishing ON favorites.idPublishing = publishing.id WHERE favorites.deleted_at IS NULL && publishing.deleted_at IS NULL && ussers.deleted_at IS NULL ORDER BY favorites.created_at DESC';
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

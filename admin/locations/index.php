@@ -28,9 +28,22 @@
 
   }
 
-  try{
+  if(isset($_GET['locationAsc'])){
+
+    $sql = 'SELECT * FROM locationmaps WHERE deleted_at IS NULL ORDER BY location ASC';
+
+  }elseif(isset($_GET['locationDesc'])){
+
+    $sql = 'SELECT * FROM locationmaps WHERE deleted_at IS NULL ORDER BY location DESC';
+
+  }else{
 
     $sql = 'SELECT * FROM locationmaps WHERE deleted_at IS NULL ORDER BY created_at DESC';
+
+  }
+
+  try{
+
     $ps = $pdo->prepare($sql);
     $ps->execute();
 

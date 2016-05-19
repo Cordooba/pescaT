@@ -18,6 +18,26 @@
 
     <div class="col-lg-12">
 
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?fishAsc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Pez Ascendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                </button>
+        </form>
+
+      </div>
+
+      <div class="btn-group" role="group" aria-label="order" style="margin-bottom: 5px">
+
+        <form class="form-horizontal" action="?fishDesc" method="post" class="orderbutton">
+                <button type="submit" class="btn btn-primary" title="Pez Descendente">
+                  <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                </button>
+        </form>
+
+      </div>
+
       <div class="panel panel-default">
 
         <div class="panel-heading text-center"><h1>Listado de Peces</h1></div>
