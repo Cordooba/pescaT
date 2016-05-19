@@ -110,9 +110,10 @@ try{
 	$sql = "CREATE TABLE IF NOT EXISTS favorites (
 		id 			       	 				INT AUTO_INCREMENT PRIMARY KEY,
 		idUsser			  	 				INT,
-		idPublishing						INT UNIQUE,
+		idPublishing						INT,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
+		UNIQUE(idUsser, idPublishing),
 
 		FOREIGN KEY (idUsser) REFERENCES ussers (id)
 						ON UPDATE CASCADE
