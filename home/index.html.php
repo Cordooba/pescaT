@@ -16,7 +16,7 @@
 
 <div class="container">
 
-  <div class="col-lg-8 col-md-offset-5" style="margin-bottom: 10px">
+  <div class="col-lg-8 col-md-offset-5" style="margin-bottom: 10px;">
 
     <form class="form-inline" action="?search" method="post">
 

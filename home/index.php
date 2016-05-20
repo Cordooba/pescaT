@@ -14,9 +14,10 @@
 
       try{
 
-        $sql = 'SELECT * FROM publishing WHERE content LIKE :content';
+        $sql = 'SELECT *, ussers.name AS name, ussers.subname AS subname FROM publishing JOIN ussers ON publishing.idUsser = ussers.id WHERE content LIKE :content OR title LIKE :title';
         $ps = $pdo->prepare($sql);
         $ps -> bindValue(':content', '%'.$toSearch.'%');
+        $ps -> bindValue(':title', '%'.$toSearch.'%');
         $ps->execute();
 
       }catch(PDOException $e) {
@@ -31,9 +32,8 @@
 
       }
 
-    var_dump($result);
-    exit();  
-
+    require_once 'searchResults/index.html.php';
+    exit();
 
     }
 
