@@ -86,7 +86,7 @@
                         <td>
                           <form class="" action="?deleteLocation" method="POST">
                             <input type="hidden" name="idLocation" value="<?=$location['id']?>">
-                            <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                           </form>
                         </td>
                       </tr>
@@ -113,6 +113,16 @@
     </div>
 
   </div>
+
+  <script type="text/javascript">
+
+  function modalUsser() {
+
+    alert('Se va a eliminar una ubicacción de la aplicacción.');
+
+  }
+
+  </script>
 
 </body>
 </html>

@@ -71,7 +71,7 @@
                       <td>
                         <form class="" action="?updatePublishing" method="POST">
                           <input type="hidden" name="idPublishing" value="<?=$publishing['id']?>">
-                          <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
+                          <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
                         </form>
                       </td>
                     </tr>
@@ -92,3 +92,17 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+
+function modalUsser() {
+
+  alert('Se va a actualizar o dar de alta una publicacción eliminada en la aplicacción.');
+
+}
+
+</script>
+
+</body>
+
+</html>

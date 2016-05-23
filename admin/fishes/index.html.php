@@ -89,7 +89,7 @@
                         <td>
                           <form class="" action="?deleteFish" method="POST">
                             <input type="hidden" name="idFish" value="<?=$fish['id']?>">
-                            <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                           </form>
                         </td>
                       </tr>
@@ -116,6 +116,16 @@
     </div>
 
   </div>
+
+  <script type="text/javascript">
+
+  function modalUsser() {
+
+    alert('Se va a eliminar un pez de la aplicacción.');
+
+  }
+
+  </script>
 
 </body>
 </html>

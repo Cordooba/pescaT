@@ -40,7 +40,7 @@
                   <form class="" action="?deleteFriend" method="post" style="display: inline">
 
                     <input type="hidden" name="idUsserAdd" value="<?=$friend['id']?>">
-                    <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></button>
+                    <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></button>
 
                   </form>
 
@@ -71,3 +71,18 @@
   </div>
 
 </div>
+
+
+<script type="text/javascript">
+
+function modalUsser() {
+
+  alert('Se va a eliminar un amigo de tu perfil.');
+
+}
+
+</script>
+
+</body>
+
+</html>

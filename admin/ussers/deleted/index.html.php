@@ -68,7 +68,7 @@
                       <td>
                         <form class="" action="?updateUsser" method="POST">
                           <input type="hidden" name="idUsser" value="<?=$usser['id']?>">
-                          <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
+                          <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
                         </form>
                       </td>
                     </tr>
@@ -89,3 +89,16 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+
+function modalUsser() {
+
+  alert('Se va a actualizar o dar de alta un usuario eliminado en la aplicacción.');
+
+}
+
+</script>
+
+</body>
+</html>

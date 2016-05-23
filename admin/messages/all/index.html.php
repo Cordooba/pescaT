@@ -89,7 +89,7 @@
                           <td>
                             <form class="" action="?deleteMessage" method="POST">
                               <input type="hidden" name="id" value="<?=$message['id']?>">
-                              <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                              <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                             </form>
                           </td>
 
@@ -118,3 +118,17 @@
     </div>
 
 </div>
+
+<script type="text/javascript">
+
+function modalUsser() {
+
+  alert('Se va a eliminar un mensaje de la aplicacción.');
+
+}
+
+</script>
+
+</body>
+
+</html>

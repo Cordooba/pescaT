@@ -71,7 +71,7 @@
                   <form class="" action="?addFriend" method="post" style="display: inline-block">
 
                     <input type="hidden" name="idUsser" value="<?=$usser['id']?>">
-                    <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
+                    <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
 
                   </form>
 
@@ -108,3 +108,18 @@
   </div>
 
 <?php endif ; ?>
+
+
+<script type="text/javascript">
+
+function modalUsser() {
+
+  alert('Se ha a añadido un amigo a tu perfil.');
+
+}
+
+</script>
+
+</body>
+
+</html>

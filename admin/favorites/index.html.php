@@ -105,7 +105,7 @@
                         <td>
                           <form class="" action="?deleteFavorite" method="POST">
                             <input type="hidden" name="idFavorite" value="<?=$favorite['id']?>">
-                            <button type="submit" class="btn btn-link btn-sm listiconbutton"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                           </form>
                         </td>
                       </tr>
@@ -130,6 +130,16 @@
     </div>
 
   </div>
+
+  <script type="text/javascript">
+
+  function modalUsser() {
+
+    alert('Se va a eliminar un me gusta de una publicacción en la aplicacción.');
+
+  }
+
+  </script>
 
 </body>
 </html>
