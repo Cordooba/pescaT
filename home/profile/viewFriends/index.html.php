@@ -31,11 +31,23 @@
 
             <tbody>
 
+              <!-- <tr class="text-center">
+
+                <td>
+
+                  <img src="../../../images/image002.jpg" alt="FotoPerfil" />
+
+                </td>
+
+              </tr> -->
+
               <tr class="text-center">
 
                 <td class="text-center">
 
-                  <a href="viewProfile?id=<?=$friend['id']?>"><?=$friend['name']?> <?=$friend['subname']?></a>
+                  <img style="height: 50px; width: 50px;margin-right: 20px" src="../../../images/image002.jpg" alt="FotoPerfil" />
+
+                  <a style="margin-left: 20px" href="viewProfile?id=<?=$friend['id']?>"><?=$friend['name']?> <?=$friend['subname']?></a>
 
                   <form class="" action="?deleteFriend" method="post" style="display: inline">
 

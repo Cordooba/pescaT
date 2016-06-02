@@ -34,6 +34,16 @@
 
                 <td>
 
+                  <img src="../../images/image002.jpg" alt="FotoPerfil" />
+
+                </td>
+
+              </tr>
+
+              <tr class="text-center">
+
+                <td>
+
                   <strong>Fecha de nacimiento :</strong> <?=$usser['bday']?>
 
                 </td>

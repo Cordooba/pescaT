@@ -31,6 +31,16 @@
                       <tbody>
 
                         <tr class="text-center">
+
+                          <td colspan="2">
+
+                            <img src="../../../images/image002.jpg" alt="FotoPerfil" />
+
+                          </td>
+
+                        </tr>
+
+                        <tr class="text-center">
                           <td>
                             <strong>Nombre</strong>
                           </td>
