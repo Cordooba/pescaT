@@ -31,6 +31,10 @@
                       <tbody>
 
                         <tr class="text-center">
+
+                        </tr>
+
+                        <tr class="text-center">
                           <td>
                             <strong>Nombre</strong>
                           </td>

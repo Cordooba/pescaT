@@ -83,9 +83,10 @@ try{
 	$sql = "CREATE TABLE IF NOT EXISTS usserFriends (
 		id											INT AUTO_INCREMENT PRIMARY KEY,
 		idUsser			  	 				INT,
-		idUsserAdd							INT UNIQUE,
+		idUsserAdd							INT,
 		created_at	   					TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		deleted_at  	 					TIMESTAMP NULL DEFAULT NULL,
+		UNIQUE(idUsser, idUsserAdd),
 
 		FOREIGN KEY (idUsser) REFERENCES ussers (id)
 						ON UPDATE CASCADE
