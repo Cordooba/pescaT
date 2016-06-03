@@ -103,10 +103,28 @@
                         <td><?=$favorite['title']?></td>
                         <td><?=$favorite['fecha']?></td>
                         <td>
-                          <form class="" action="?deleteFavorite" method="POST">
-                            <input type="hidden" name="idFavorite" value="<?=$favorite['id']?>">
-                            <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-                          </form>
+
+                          <button type="submit" class="btn btn-link btn-sm listiconbutton" data-toggle="modal" data-target="#myModal<?=$favorite['id']?>"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+
+                          <div class="modal fade" id="myModal<?=$favorite['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                  <h4 class="modal-title" id="myModalLabel">¿Estas seguro de que quieres eliminar un me gusta de la publicación <?=$favorite['title']?>?</h4>
+                                </div>
+
+                                <div class="modal-footer" style="display: inline-block">
+                                  <button style="display: inline" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                  <form style="display: inline" action="?deleteFavorite" class="" method="POST">
+                                    <input type="hidden" name="idFavorite" value="<?=$favorite['id']?>">
+                                    <button type="submit" class="btn btn-danger">Aceptar</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                         </td>
                       </tr>
                     <?php endforeach ; ?>
@@ -131,15 +149,8 @@
 
   </div>
 
-  <script type="text/javascript">
-
-  function modalUsser() {
-
-    alert('Se va a eliminar un me gusta de una publicacción en la aplicacción.');
-
-  }
-
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>

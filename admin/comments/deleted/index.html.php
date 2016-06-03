@@ -70,10 +70,28 @@
                         <a href="view?id=<?=$commentDeleted['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
                       </td>
                       <td>
-                        <form class="" action="?updateComment" method="POST">
-                          <input type="hidden" name="idComment" value="<?=$commentDeleted['id']?>">
-                          <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
-                        </form>
+
+                        <button type="submit" class="btn btn-link btn-sm listiconbutton" data-toggle="modal" data-target="#myModal<?=$commentDeleted['id']?>"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
+
+                        <div class="modal fade" id="myModal<?=$commentDeleted['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">¿Estas seguro de que quieres dar de alta el comentario eliminado?</h4>
+                              </div>
+
+                              <div class="modal-footer" style="display: inline-block">
+                                <button style="display: inline" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <form style="display: inline" action="?updateComment" class="" method="POST">
+                                  <input type="hidden" name="idComment" value="<?=$commentDeleted['id']?>">
+                                  <button type="submit" class="btn btn-danger">Aceptar</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                       </td>
                     </tr>
                   <?php endforeach ; ?>
@@ -96,15 +114,8 @@
 
 </div>
 
-<script type="text/javascript">
-
-function modalUsser() {
-
-  alert('Se va a actualizar o dar de alta un comentario eliminado en la aplicacción.');
-
-}
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>

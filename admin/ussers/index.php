@@ -5,7 +5,7 @@
   if ( isset($_GET['deleteUsser']) ) {
 
     $id = htmlspecialchars($_POST['idUsser'], ENT_QUOTES, 'UTF-8');
-
+  
     if ( is_numeric($id) ) {
 
       try {
