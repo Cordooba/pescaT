@@ -78,12 +78,26 @@
 
                   <a href="viewUsserProfile?id=<?=$usser['id']?>"><i class="fa fa-eye fa-2x" aria-hidden="true"></i></a>
 
-                  <form class="" action="?addFriend" method="post" style="display: inline-block">
+                  <button type="submit" class="btn btn-link btn-sm listiconbutton" data-toggle="modal" data-target="#myModal<?=$usser['id']?>"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
 
-                    <input type="hidden" name="idUsser" value="<?=$usser['id']?>">
-                    <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></button>
+                    <div class="modal fade" id="myModal<?=$usser['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">¿Estas seguro de que quieres seguir al usuario <?=$usser['name']?> <?=$usser['subname']?>?</h4>
+                          </div>
 
-                  </form>
+                          <div class="modal-footer" style="display: inline-block">
+                            <button style="display: inline" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <form style="display: inline" action="?addFriend" class="" method="POST">
+                              <input type="hidden" name="idUsser" value="<?=$usser['id']?>">
+                              <button type="submit" class="btn btn-danger">Aceptar</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                 </td>
 
@@ -119,16 +133,8 @@
 
 <?php endif ; ?>
 
-
-<script type="text/javascript">
-
-function modalUsser() {
-
-  alert('Se ha a añadido un amigo a tu perfil.');
-
-}
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 

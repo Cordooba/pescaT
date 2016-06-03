@@ -49,12 +49,26 @@
 
                   <a style="margin-left: 20px" href="viewProfile?id=<?=$friend['id']?>"><?=$friend['name']?> <?=$friend['subname']?></a>
 
-                  <form class="" action="?deleteFriend" method="post" style="display: inline">
+                  <button type="submit" class="btn btn-link btn-sm listiconbutton" data-toggle="modal" data-target="#myModal<?=$friend['id']?>"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></button>
 
-                    <input type="hidden" name="idUsserAdd" value="<?=$friend['id']?>">
-                    <button type="submit" class="btn btn-link btn-sm listiconbutton" onclick="modalUsser()"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i></button>
+                    <div class="modal fade" id="myModal<?=$friend['id']?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">¿Estas seguro de que quieres dejar de seguir a este usuario?</h4>
+                          </div>
 
-                  </form>
+                          <div class="modal-footer" style="display: inline-block">
+                            <button style="display: inline" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <form style="display: inline" action="?deleteFriend" class="" method="POST">
+                              <input type="hidden" name="idUsserAdd" value="<?=$friend['id']?>">
+                              <button type="submit" class="btn btn-danger">Aceptar</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                   <a href="sendMessage?id=<?=$friend['id']?>"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
 
@@ -84,16 +98,8 @@
 
 </div>
 
-
-<script type="text/javascript">
-
-function modalUsser() {
-
-  alert('Se va a eliminar un amigo de tu perfil.');
-
-}
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 

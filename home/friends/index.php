@@ -28,6 +28,9 @@
 
     }
 
+    header('Location: ..');
+    exit();
+
   }
 
   if ( isset($_GET['logoutUsser']) ) {
